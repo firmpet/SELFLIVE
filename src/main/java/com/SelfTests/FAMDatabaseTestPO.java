@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FAMDatabaseTestPO {
 
@@ -18,78 +20,82 @@ public class FAMDatabaseTestPO {
 
 
     //Define element locator
-    @FindBy (linkText = "Database Integration Test")
-    public WebElement ClickDatabaseIntegration;
+    @FindBy (xpath = "//*[text()='Database Integration Test']")
+    public WebElement CtaDatabaseIntegration;
 
     @FindBy (xpath = "//*[@id=\"page\"]/section/header/h1/span")
     public WebElement DatabaseIntegrationPage;
 
     @FindBy (id = "select1")
-    public WebElement Select1_click;
+    public WebElement Select1Field;
 
     @FindBy (className = "lookup-option")
-    public WebElement Test_click;
+    public WebElement CtaTest;
 
     @FindBy (id = "text1")
-    public WebElement Email_input;
+    public WebElement Email;
 
     @FindBy (className = "nextbutton")
-    public WebElement Next_click;
+    public WebElement Next;
 
     @FindBy (className = "sectionNameTab ")
-    public WebElement ReadOnlySubformPage;
+    public WebElement ReadOnlySubformColumn;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-2193724e-7b47-44d7-bf73-03c8b98b7033\"]/div/div/button[3]")
-    public WebElement Next1_click;
+    public WebElement CtaNext;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-2193724e-7b47-44d7-bf73-03c8b98b7033\"]/section[1]/ul/li[3]/a")
-    public WebElement AddAEntryPage;
+    public WebElement CtaAddAEntry;
 
     @FindBy (id = "LastNameadd")
-    public WebElement EnterText1;
+    public WebElement EnterName;
 
     @FindBy (id = "FirstNameadd")
-    public WebElement EnterFirstName;
+    public WebElement FirstName;
 
     @FindBy(id = "emailadd")
     public WebElement EnterEmail;
 
     @FindBy (css = "#AF-Form-2193724e-7b47-44d7-bf73-03c8b98b7033 > div > div > button.btn.btn-af.submitbutton.pull-right")
-    public WebElement Submit_click;
+    public WebElement Submit;
 
     @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
-    public WebElement SubmissionSuccessfulPage;
+    public WebElement SubmissionPage;
 
 
 
 
-    public void ClickDatabaseIntegration(){        ClickDatabaseIntegration.click();                         }
+    public void databaseIntegrationBtn(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(CtaDatabaseIntegration));
 
-    public void DatabaseIntegrationPage(){         DatabaseIntegrationPage.isDisplayed();                     }
+        CtaDatabaseIntegration.click();                         }
 
-    public void Select1_click(){                   Select1_click.click();                                     }
+    public void dataIntegrationPage(){           DatabaseIntegrationPage.isDisplayed();                     }
 
-    public void Test_click(){                      Test_click.click();                                       }
+    public void enterText(){                     Select1Field.click();                                     }
 
-    public void Email_input(){                     Email_input.sendKeys("support@firmstep.com");}
+    public void testBtn(){                       CtaTest.click();                                       }
 
-    public void Next_click(){                      Next_click.click();                                        }
+    public void enterEmail(){                    Email.sendKeys("support@firmstep.com");}
 
-    public void ReadOnlySubformPage(){             ReadOnlySubformPage.isDisplayed();                      }
+    public void nextBtn(){                       Next.click();                                        }
 
-    public void Next1_click(){                     Next1_click.click();                                      }
+    public void readOnlySubform(){               ReadOnlySubformColumn.isDisplayed();                      }
 
-    public void AddAEntryPage(){                   AddAEntryPage.isDisplayed();                             }
+    public void nextLink(){                      CtaNext.click();                                      }
 
-    public void EnterText1(){                      EnterText1.sendKeys("Dan");                 }
+    public void enterData(){                     CtaAddAEntry.isDisplayed();                             }
 
-    public void EnterFirstName(){                  EnterFirstName.sendKeys("David");           }
+    public void textField(){                     EnterName.sendKeys("Dan");                 }
 
-    public void EnterEmail(){                      EnterEmail.sendKeys("test@example.com");    }
+    public void nameField(){                     FirstName.sendKeys("David");           }
 
-    public void Submit_click(){                    Submit_click.click();                                   }
+    public void email(){                         EnterEmail.sendKeys("test@example.com");    }
 
-    public void SubmissionSuccessfulPage(){        SubmissionSuccessfulPage.isDisplayed();                }
+    public void submitBtn(){                     Submit.click();                                   }
+
+    public void successPage(){                   SubmissionPage.isDisplayed();                }
 
 
 }

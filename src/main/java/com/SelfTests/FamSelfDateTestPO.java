@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FamSelfDateTestPO {
 
@@ -17,8 +19,8 @@ public class FamSelfDateTestPO {
     }
 
     //Define element locator
-    @FindBy (linkText = "Date Fields Manual Test")
-    public WebElement DateFieldsManual;
+    @FindBy (xpath = "//*[text()='Date Fields Manual Test']")
+    public WebElement CtaDateFieldsManual;
 
     @FindBy (xpath = "//*[@id=\"page\"]/section/header/h1")
     public WebElement DateFieldPage;
@@ -39,19 +41,23 @@ public class FamSelfDateTestPO {
     public WebElement SubmissionPage;
 
 
-    public void DateFieldsManual(){                  DateFieldsManual.click();          }
+    public void dateFieldLink(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(CtaDateFieldsManual));
 
-    public void DateFieldPage(){                     DateFieldPage.isDisplayed();    }
+        CtaDateFieldsManual.click();          }
 
-    public void DateFrom(){                          DateFrom.sendKeys("15012019");}
+    public void dashboard(){                     DateFieldPage.isDisplayed();    }
 
-    public void DateTo(){                            DateTo.sendKeys("20022019");}
+    public void dateField(){                     DateFrom.sendKeys("15012019");}
 
-    public void Time(){                              Time.sendKeys("1530");}
+    public void dateField1(){                    DateTo.sendKeys("20022019");}
 
-    public void SubmitForm(){                        SubmitForm.click();    }
+    public void timeField(){                     Time.sendKeys("1530");}
 
-    public void SubmissionPage(){                    SubmissionPage.isDisplayed(); }
+    public void submitBtn(){                     SubmitForm.click();    }
+
+    public void submit(){                        SubmissionPage.isDisplayed(); }
 
 }
 

@@ -2,7 +2,10 @@ package com.SelfTests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EscalationsPO {
 
@@ -17,23 +20,23 @@ public class EscalationsPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*[@id=\"app-content\"]/div[4]/div[2]/div[2]/div[2]/ul/li/a")
-    public WebElement EscalationTest;
+    @FindBy (xpath = "//*span[text()='Escalation Test Process 23022018']")
+    public WebElement CtaEscalation;
 
     @FindBy (className = "Escalation Form One")
-    public WebElement EscalationFormOne;
+    public WebElement EscalationFormPage;
 
     @FindBy (id = "enterSomeText")
-    public WebElement EnterTest;
+    public WebElement TestField;
 
     @FindBy (className = "submitText")
-    public WebElement ClickSubmit;
+    public WebElement CtaSubmit;
 
     @FindBy (css = "#page>section>section>div>div.submission-message-content.clearfix>p:nth-child(2)")
     public WebElement SubmitSuccessfully;
 
     @FindBy (linkText = "MyRequests V3")
-    public WebElement MyRequestsV3;
+    public WebElement CtaMyRequestsV3;
 
     @FindBy (id = "hello-title")
     public WebElement MyRequestPage;
@@ -45,34 +48,38 @@ public class EscalationsPO {
     public WebElement Search;
 
     @FindBy (id = "search-submit")
-    public WebElement ClickSearch;
+    public WebElement CtaSearch;
 
-    @FindBy (xpath = "//*[@id=\"MyRequestTable\"]/tbody/tr[1]")
+    @FindBy (xpath = "//*[@id='MyRequestTable']/tbody/tr[1]")
     public WebElement CaseLogs;
 
 
 
-    public void EscalationTest(){                EscalationTest.click();   }
+    public void escalations(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(CtaEscalation));
 
-    public void EscalationFormOne(){             EscalationFormOne.isDisplayed();   }
+        CtaEscalation.click();   }
 
-    public void EnterTest(){                     EnterTest.sendKeys("Testing");  }
+    public void formPage(){                   EscalationFormPage.isDisplayed();   }
 
-    public void ClickSubmit(){                   ClickSubmit.click();             }
+    public void enterTest(){                  TestField.sendKeys("Testing");  }
 
-    public void SubmitSuccessfully(){            SubmitSuccessfully.isDisplayed();         }
+    public void submitBtn(){                  CtaSubmit.click();             }
 
-    public void MyRequestsV3(){                  MyRequestsV3.click();              }
+    public void submissionPage(){             SubmitSuccessfully.isDisplayed();         }
 
-    public void MyRequestPage(){                 MyRequestPage.isDisplayed();        }
+    public void myRequestsV3Link(){           CtaMyRequestsV3.click();              }
 
-    public void MyRequestTable(){                MyRequestTable.isDisplayed();         }
+    public void myRequestFormPage(){          MyRequestPage.isDisplayed();        }
 
-    public void Search(){                        Search.sendKeys("FS-Case-112975008");}
+    public void myRequestFormTable(){         MyRequestTable.isDisplayed();         }
 
-    public void ClickSearch(){                   ClickSearch.click();          }
+    public void searchField(){                Search.sendKeys("FS-Case-112975008");}
 
-    public void CaseLogs(){                      CaseLogs.isDisplayed();      }
+    public void searchBtn(){                  CtaSearch.click();          }
+
+    public void caseLogsPage(){               CaseLogs.isDisplayed();      }
 
 
 

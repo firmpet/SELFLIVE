@@ -11,69 +11,70 @@ public class FAMDatabaseTest_step extends DriverInstance {
     private FAMDatabaseTestPO data;
 
 
-    @And("^I click on Cta Database Integration Test$")
+    @When("^I click on Cta Database Integration Test$")
     public void iClickOnCtaDatabaseIntegrationTest() {
         data = new FAMDatabaseTestPO(driver);
-        data.ClickDatabaseIntegration();
+        data.databaseIntegrationBtn();
     }
 
     @And("^Database Integration Form One page is displayed$")
     public void databaseIntegrationFormOnePageIsDisplayed() {
         data = new FAMDatabaseTestPO(driver);
-        data.DatabaseIntegrationPage();
+        data.dataIntegrationPage();
     }
 
-    @And("^I select select (\\d+) from dropdown field and I enter text (\\d+) in text (\\d+) field in Select List Check column$")
-    public void iSelectSelectFromDropdownFieldAndIEnterTextInTextFieldInSelectListCheckColumn(int arg0, int arg1, int arg2) {
+    @And("^I fill in the dropdown fields$")
+    public void iFillInTheDropdownFields() {
         data = new FAMDatabaseTestPO(driver);
-        data.Select1_click();
-        data.Test_click();
-        data.Email_input();
+        data.enterText();
+        data.testBtn();
+        data.enterEmail();
     }
 
-    @Then("^I click Cta Next$")
+    @Then("^I click Next$")
     public void iClickCtaNext() {
         data = new FAMDatabaseTestPO(driver);
-        data.Next_click();
+        data.nextBtn();
     }
 
     @And("^Read Only SubForm column is displayed$")
     public void readOnlySubFormColumnIsDisplayed() {
         data = new FAMDatabaseTestPO(driver);
-        data.ReadOnlySubformPage();
+        data.readOnlySubform();
     }
 
-    @And("^I click Cta Next(\\d+)$")
+    @And("^I click Cta Next$")
     public void iClickCtaNext(int arg0) {
         data = new FAMDatabaseTestPO(driver);
-        data.Next1_click();
+        data.nextLink();
     }
 
     @Then("^Add a Entry column is displayed$")
     public void addAEntryColumnIsDisplayed() {
         data = new FAMDatabaseTestPO(driver);
-        data.AddAEntryPage();
+        data.enterData();
     }
 
-    @When("^I fill in text(\\d+), FirstNameadd and emailadd fields$")
+    @When("^I fill in text, FirstNameadd and emailadd fields$")
     public void iFillInTextFirstNameaddAndEmailaddFields(int arg0) {
         data = new FAMDatabaseTestPO(driver);
-        data.EnterText1();
-        data.EnterFirstName();
-        data.EnterEmail();
+        data.textField();
+        data.nameField();
+        data.email();
     }
 
     @And("^I click Cta Submit button$")
     public void iClickCtaSubmitButton() {
         data = new FAMDatabaseTestPO(driver);
-        data.Submit_click();
+        data.submitBtn();
     }
 
     @Then("^Successful submission page is displayed$")
     public void successfulSubmissionPageIsDisplayed() {
         data = new FAMDatabaseTestPO(driver);
-        data.SubmissionSuccessfulPage();
+        data.successPage();
     }
+
 
 
 }

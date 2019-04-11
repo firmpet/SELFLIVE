@@ -9,95 +9,97 @@ import cucumber.api.java.en.When;
 
 
 public class FamSelfCalculations_step extends DriverInstance {
-    private FamSelfCalculationsPO Calcu;
-
-    @Given("^Services dashboard is displayed$")
-    public void servicesDashboardDisplayed() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.Dashboard();
-    }
+    private FamSelfCalculationsPO calcu;
 
     @When("^I click on Cta Calculations Process$")
     public void iClickOnCtaCalculationsProcess() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.CalculationsProcess_click();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.calculationsProcessLink();
     }
 
     @Then("^Calculations Form page is displayed with Contains column$")
     public void calculationsFormPageIsDisplayedWithContainsColumn() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.CalculationsForm();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.calculationsColumn();
     }
 
     @When("^I enter Footpath, Park, Road and Cycle Track in the field$")
     public void iEnterFootpathParkRoadAndCycleTrackInTheField() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.ContainsField();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.insertText();
     }
 
     @Then("^IF statement column is displayed with Extended IF statement as title$")
     public void ifStatementColumnIsDisplayedWithExtendedIFStatementAsTitle() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.PageTitle();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.pageTitle();
     }
 
     @And("^I select Yes from all the three dropdown fields$")
     public void iSelectYesFromAllTheThreeDropdownFields() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.TreeDropdownField();
-        Calcu.TreeDropdownField_click();
-        Calcu.BenchDropdownField();
-        Calcu.BenchDropdownField_click();
-        Calcu.LamppostField();
-        Calcu.LamppostField_click();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.inputField();
+        calcu.insertText1();
+        calcu.inputField1();
+        calcu.insertText2();
+        calcu.inputField2();
+        calcu.insertText3();
+    }
+
+    @And("^I click Nextlink$")
+    public void iClickNextlink() {
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.nextbtn();
     }
 
     @Then("^String Manipulation column page is displayed$")
     public void stringManipulationColumnPageIsDisplayed() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.StringManipulationColumn();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.stringManSection();
     }
 
-    @And("^I select Cta Next(\\d+)$")
+    @And("^I select Nextlink$")
     public void iSelectCtaNext(int arg0) {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.Next_click();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.nextBtn();
     }
 
     @Then("^Subforms column page is displayed$")
     public void subformsColumnPageIsDisplayed() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.SubformsColumn();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.subforms();
     }
 
     @And("^I click Cta Add Record$")
     public void iClickCtaAddRecord() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.AddRecord();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.recordBtn();
     }
 
-    @And("^I entered £(\\d+) in the field$")
-    public void iEntered£InTheField(int arg0) {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.AmountField();
-        Calcu.ClickAddRecord();
+    @And("^I entered value in the field$")
+    public void iEnteredValueInTheField() {
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.textField();
+        calcu.addRecordBtn();
     }
 
     @And("^Total sum of the record is displayed$")
     public void totalSumOfTheRecordIsDisplayed() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.TotalSum();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.sum();
     }
 
     @And("^I click Cta Submit$")
     public void iClickCtaSubmit() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.Submit();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.submitBtn();
     }
 
     @Then("^Submission page is displayed$")
     public void submissionPageIsDisplayed() {
-        Calcu = new FamSelfCalculationsPO(driver);
-        Calcu.SubmissionSuccessfulPage();
+        calcu = new FamSelfCalculationsPO(driver);
+        calcu.submitPage();
     }
+
+
 }

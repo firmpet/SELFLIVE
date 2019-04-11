@@ -1,6 +1,7 @@
 package com.SelfTests.StepDefinitions;
 
 import com.SelfTests.DriverInstance;
+import com.SelfTests.FAMDatabaseTestPO;
 import com.SelfTests.FamSelfDateTestPO;
 import com.SelfTests.TestAssert;
 import cucumber.api.java.en.And;
@@ -15,29 +16,34 @@ public class FamSelfDateTest_step extends DriverInstance {
 
     @When("^I click on Cta Date Fields Manual Test$")
     public void iClickOnCtaDateFieldsManualTest() {
-        dateT.DateFieldsManual();
+        dateT = new FamSelfDateTestPO(driver);
+        dateT.dateFieldLink();
     }
 
     @Then("^Date Fields Manual Test Form page is displayed$")
     public void dateFieldsManualTestFormPageIsDisplayed() {
-        dateT.DateFieldPage();
+        dateT = new FamSelfDateTestPO(driver);
+        dateT.dashboard();
     }
 
     @When("^I enter date From, date To and time in the fields$")
     public void iEnterDateFromDateToAndTimeInTheFields() {
-        dateT.DateFrom();
-        dateT.DateTo();
-        dateT.Time();
+        dateT = new FamSelfDateTestPO(driver);
+        dateT.dateField();
+        dateT.dateField1();
+        dateT.timeField();
     }
 
     @And("^I click Cta submit$")
     public void iClickCtaSubmit() {
-        dateT.SubmitForm();
+        dateT = new FamSelfDateTestPO(driver);
+        dateT.submitBtn();
     }
 
     @Then("^Submission page should displayed with submitted data$")
     public void submissionPageShouldDisplayedWithSubmittedData() {
-        dateT.SubmissionPage();
-        Assert.assertTrue(testAssert.validateElementExistByXpath(driver, "//*[@id=\"page\"]/section/section/div/div[1]/p[2]"));
+        dateT = new FamSelfDateTestPO(driver);
+        dateT.submit();
+        Assert.assertTrue(testAssert.validateElementExistByXpath(driver, "//*[@id='page']/section/section/div/div[1]/p[2]"));
     }
 }

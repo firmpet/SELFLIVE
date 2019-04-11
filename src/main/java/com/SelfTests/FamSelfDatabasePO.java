@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FamSelfDatabasePO {
 
@@ -22,13 +24,13 @@ public class FamSelfDatabasePO {
     public WebElement DropdownField;
 
     @FindBy (id = "select1")
-    public WebElement Test_Select;
+    public WebElement InputField;
 
     @FindBy (id = "text1")
-    public WebElement Clear_Field;
+    public WebElement Field;
 
     @FindBy (id = "text1")
-    public WebElement EnterEmail;
+    public WebElement Email;
 
     @FindBy (id = "LastNameadd")
     public WebElement LastName;
@@ -37,20 +39,24 @@ public class FamSelfDatabasePO {
     public WebElement FirstName;
 
     @FindBy (id = "emailadd")
-    public WebElement Email;
+    public WebElement InputEmail;
 
 
-    public void DropdownField(){                        DropdownField.click();                    }
+    public void optionsField(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(DropdownField));
 
-    public void Test_Select(){                          Test_Select.sendKeys("test");}
+        DropdownField.click();                    }
 
-    public void Clear_Field(){                          Clear_Field.clear();         }
+    public void insertText(){                     InputField.sendKeys("test");}
 
-    public void EnterEmail(){                           EnterEmail.sendKeys("support@example.com");}
+    public void clear(){                          Field.clear();         }
 
-    public void LastName(){                             LastName.sendKeys("David");}
+    public void insertEmail(){                    Email.sendKeys("support@example.com");}
 
-    public void FirstName(){                            FirstName.sendKeys("Daniel");}
+    public void lName(){                          LastName.sendKeys("David");}
 
-    public void Email(){                                Email.sendKeys("test@example.com");}
+    public void fName(){                          FirstName.sendKeys("Daniel");}
+
+    public void emailField(){                     InputEmail.sendKeys("test@example.com");}
 }

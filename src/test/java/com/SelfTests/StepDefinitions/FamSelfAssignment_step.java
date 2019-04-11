@@ -4,49 +4,50 @@ import com.SelfTests.DriverInstance;
 import com.SelfTests.FamSelfAssignmentPO;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 
 public class FamSelfAssignment_step extends DriverInstance {
     private FamSelfAssignmentPO assign;
 
 
-    @And("^I click on Cta Dashboard and Assignment Process$")
+    @When("^I click on Cta Dashboard and Assignment Process$")
     public void iClickOnCtaDashboardAndAssignmentProcess() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.CtaDashboardAndAssignmentProcess();
+        assign.dashboardAndAssignmentProcessLink();
     }
 
-    @And("^New Form (\\d+)-(\\d+)-(\\d+) page is displayed$")
-    public void newFormPageIsDisplayed(int arg0, int arg1, int arg2) {
+    @And("^New Form page is displayed$")
+    public void newFormPageIsDisplayed() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.FormPage();
+        assign.formPage();
     }
 
     @And("^I enter test summary date$")
     public void iEnterTestSummaryDate() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.SummaryField1();
-        assign.SummaryField();
+        assign.clearField();
+        assign.enterText();
     }
 
     @And("^I select email and group from the dropdown fields$")
     public void iSelectEmailAndGroupFromTheDropdownFields() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.SpecificUserField();
-        assign.EnterUserEmail();
-        assign.SpecificGroup();
-        assign.SpecificGroupField();
+        assign.userField();
+        assign.enterEmail();
+        assign.groupField();
+        assign.groupName();
     }
 
     @And("^click Cta Submit$")
     public void clickCtaSubmit() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.Submit_click();
+        assign.submitBtn();
     }
 
     @Then("^successful form submission page is displayed$")
     public void successfulFormSubmissionPageIsDisplayed() {
         assign = new FamSelfAssignmentPO(driver);
-        assign.SuccessfulSubmissionPage();
+        assign.formSubmit();
     }
 }

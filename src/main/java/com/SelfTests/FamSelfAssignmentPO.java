@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FamSelfAssignmentPO {
 
@@ -19,11 +21,11 @@ public class FamSelfAssignmentPO {
 
 
     //Define element locator
-    @FindBy (linkText = "Dashboard and Assignment Process")
+    @FindBy (xpath = "//*[text()='Dashboard and Assignment Process']")
     public WebElement CtaDashboardAndAssignmentProcess;
 
     @FindBy (className = "_formName")
-    public WebElement FormPage;
+    public WebElement DashboardPage;
 
     @FindBy (id = "summary_show")
     public WebElement SummaryField1;
@@ -35,7 +37,7 @@ public class FamSelfAssignmentPO {
     public WebElement SpecificUserField;
 
     @FindBy (id = "select1")
-    public WebElement EnterUserEmail;
+    public WebElement UserEmail;
 
     @FindBy (id = "assignToSpecificG")
     public WebElement SpecificGroup;
@@ -44,34 +46,38 @@ public class FamSelfAssignmentPO {
     public WebElement SpecificGroupField;
 
     @FindBy (className = "btn btn-af submitbutton pull-right")
-    public WebElement Submit_click;
+    public WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
-    public WebElement SuccessfulSubmissionPage;
+    public WebElement SuccessfulSubmission;
 
 
 
 
 
-    public void CtaDashboardAndAssignmentProcess(){                CtaDashboardAndAssignmentProcess.click();     }
+    public void dashboardAndAssignmentProcessLink(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(CtaDashboardAndAssignmentProcess));
 
-    public void FormPage(){                                        FormPage.isDisplayed();                  }
+        CtaDashboardAndAssignmentProcess.click();     }
 
-    public void SummaryField1(){                                   SummaryField1.clear();                   }
+    public void formPage(){                                      DashboardPage.isDisplayed();                  }
 
-    public void SummaryField(){                                    SummaryField.sendKeys("Summary Test 2019-04-08");}
+    public void clearField(){                                    SummaryField1.clear();                   }
 
-    public void SpecificUserField(){                               SpecificUserField.click();        }
+    public void enterText(){                                     SummaryField.sendKeys("Summary Test 2019-04-08");}
 
-    public void EnterUserEmail(){                                  EnterUserEmail.sendKeys("petermalt@firmstep.com");}
+    public void userField(){                                     SpecificUserField.click();        }
 
-    public void SpecificGroup(){                                   SpecificGroup.click();         }
+    public void enterEmail(){                                    UserEmail.sendKeys("petermalt@firmstep.com");}
 
-    public void SpecificGroupField(){                              SpecificGroupField.sendKeys("CSA");}
+    public void groupField(){                                    SpecificGroup.click();         }
 
-    public void Submit_click(){                                    Submit_click.click();     }
+    public void groupName(){                                     SpecificGroupField.sendKeys("CSA");}
 
-    public void SuccessfulSubmissionPage(){                        SuccessfulSubmissionPage.isDisplayed(); }
+    public void submitBtn(){                                     CtaSubmit.click();     }
+
+    public void formSubmit(){                                    SuccessfulSubmission.isDisplayed(); }
 
 
 

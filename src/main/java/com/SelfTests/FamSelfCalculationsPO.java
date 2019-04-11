@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FamSelfCalculationsPO {
 
@@ -18,44 +20,44 @@ public class FamSelfCalculationsPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*[@id=\"app-content\"]/div[1]/div/h1")
-    public WebElement Dashboard;
-
-    @FindBy (linkText = "Calculations Process")
-    public WebElement CalculationsProcess_click;
+    @FindBy (linkText = "//*[text()='Calculations Process']")
+    public WebElement CtaCalculationsProcess;
 
     @FindBy(xpath = "//*[@id=\"page\"]/section/header/h1/span")
     public WebElement CalculationsForm;
 
     @FindBy (id = "comma")
-    public  WebElement ContainsField;
+    public  WebElement InputField;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[2]/section/div[2]/div/span/div")
-    public WebElement PageTitle;
+    public WebElement Title;
+
+    @FindBy (id = "tree")
+    public WebElement TreeField;
 
     @FindBy (id = "tree")
     public WebElement TreeDropdownField;
 
-    @FindBy (id = "tree")
-    public WebElement TreeDropdownField_click;
+    @FindBy (id = "bench")
+    public WebElement BenchField;
 
     @FindBy (id = "bench")
     public WebElement BenchDropdownField;
-
-    @FindBy (id = "bench")
-    public WebElement BenchDropdownField_click;
 
     @FindBy (id = "lamppost")
     public WebElement LamppostField;
 
     @FindBy (id = "lamppost")
-    public WebElement LamppostField_click;
+    public WebElement LamppostDropdownField;
+
+    @FindBy (linkText = "Next")
+    public WebElement BtnNext;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[1]/ul/li[3]")
     public WebElement StringManipulationColumn;
 
     @FindBy (css = "#AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417 > div > div > button.btn.btn-af.nextbutton.pull-right")
-    public WebElement Next_click;
+    public WebElement CtaNext;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[1]/ul/li[4]")
     public WebElement SubformsColumn;
@@ -67,57 +69,61 @@ public class FamSelfCalculationsPO {
     public WebElement AmountField;
 
     @FindBy (css = "#AF-Form-14e5cfb1-979c-45d8-90e2-4dd38d6a2b0c > div > div > button.btn.btn-af.submitbutton.pull-right")
-    public WebElement ClickAddRecord;
+    public WebElement CtaAddRecord;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[2]/section/div[2]/div/div[1]/table/tbody/tr/td[2]")
     public WebElement TotalSum;
 
     @FindBy (className = "submitbutton")
-    public WebElement Submit;
+    public WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
-    public WebElement SubmissionSuccessfulPage;
+    public WebElement SuccessfulPage;
 
 
-    public void Dashboard(){                             Dashboard.isDisplayed();                }
+    public void calculationsProcessLink(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(CtaCalculationsProcess));
 
-    public void CalculationsProcess_click(){             CalculationsProcess_click.click();      }
+        CtaCalculationsProcess.click();      }
 
-    public void CalculationsForm(){                      CalculationsForm.isDisplayed();         }
+    public void calculationsColumn(){                  CalculationsForm.isDisplayed();         }
 
-    public void ContainsField(){                         ContainsField.sendKeys("Footpath,Park,Road,Cycle Track");}
+    public void insertText(){                          InputField.sendKeys("Footpath,Park,Road,Cycle Track");}
 
-    public void PageTitle(){                             PageTitle.isDisplayed();      }
+    public void pageTitle(){                           Title.isDisplayed();      }
 
-    public void TreeDropdownField(){                     TreeDropdownField.click();       }
+    public void inputField(){                          TreeField.click();       }
 
-    public void TreeDropdownField_click(){               TreeDropdownField_click.sendKeys("Yes");    }
+    public void insertText1(){                         TreeDropdownField.sendKeys("Yes");    }
 
-    public void BenchDropdownField(){                    BenchDropdownField.click();      }
+    public void inputField1(){                         BenchDropdownField.click();      }
 
-    public void BenchDropdownField_click(){              BenchDropdownField_click.sendKeys("Yes");  }
+    public void insertText2(){                         BenchField.sendKeys("Yes");  }
 
-    public void LamppostField(){                         LamppostField.click();                }
+    public void inputField2(){                         LamppostField.click();                }
 
-    public void LamppostField_click(){                   LamppostField_click.sendKeys("Yes");}
+    public void insertText3(){                         LamppostDropdownField.sendKeys("Yes");}
 
-    public void StringManipulationColumn(){              StringManipulationColumn.isDisplayed();    }
+    public void nextbtn(){                             BtnNext.click();            }
 
-    public void Next_click(){                            Next_click.click();      }
+    public void stringManSection(){                    StringManipulationColumn.isDisplayed();    }
 
-    public void SubformsColumn(){                        SubformsColumn.isDisplayed();    }
+    public void nextBtn(){                             CtaNext.click();      }
 
-    public void AddRecord(){                             AddRecord.click();       }
+    public void subforms(){                            SubformsColumn.isDisplayed();    }
 
-    public void AmountField(){                           AmountField.sendKeys("50");    }
+    public void recordBtn(){                           AddRecord.click();       }
 
-    public void ClickAddRecord(){                        ClickAddRecord.click();    }
+    public void textField(){                           AmountField.sendKeys("50");    }
 
-    public void TotalSum(){                              TotalSum.isDisplayed();        }
+    public void addRecordBtn(){                        CtaAddRecord.click();    }
 
-    public void Submit(){                                Submit.click();     }
+    public void sum(){                                 TotalSum.isDisplayed();        }
 
-    public void SubmissionSuccessfulPage(){              SubmissionSuccessfulPage.isDisplayed();   }
+    public void submitBtn(){                           CtaSubmit.click();     }
+
+    public void submitPage(){                          SuccessfulPage.isDisplayed();   }
 
 
 

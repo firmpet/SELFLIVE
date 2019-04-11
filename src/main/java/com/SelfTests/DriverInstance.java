@@ -81,10 +81,11 @@ public class DriverInstance {
         driver.get(conFig.getString("URL"));
         driver.manage().window().maximize();
 
-        //sign in
+        //Sign In
         driver.findElement(By.id("loginLink")).click();
         driver.findElement(By.xpath("/html/body/div/div/div/div/div[4]/a")).click();
         driver.findElement(By.linkText("Services")).click();
+
     }
 
     //This will close the browser
