@@ -1,7 +1,9 @@
+
 Feature: Myrequests - [Date Check] (Copy)
 
-Scenario Outline:
-Given I launch this url: https://releasetesting-self.achieveservice.com/service/Myrequests_date_check
+Scenario: MyRequest Date Check
+  #Given I login with valid credentials
+  Given I launch this url: https://releasetesting-self.achieveservice.com/service/Myrequests_date_check
 When I enter <text1> field
 And I click on Cta Submit
 Then Reference and submission successful message is displayed
@@ -12,6 +14,4 @@ And my My Request page is displayed
 And I enter into <searchField>
 And I click search
 Then the result is displayed
-Examples:
-|text1 | |searchField           |
-|1     | |myrequests date check |
+

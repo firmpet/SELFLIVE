@@ -6,34 +6,38 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.lexer.Th;
 
 public class Escalations_step extends DriverInstance {
     private EscalationsPO esca;
-    //private LoginPO hp;
+    private LoginPO hp;
 
-    /*
+
     @Given("^I login with valid credentials$")
 
     public void iLoginWithValidCredentials() {
     hp = new LoginPO(driver);
     hp.Login();
     }
-    */
 
-    @And("^I click on Cta Escalation Test Process$")
-    public void iClickOnCtaEscalationTestProcess() {
+
+    @When("^I click on Cta Escalation Test Process$")
+    public void iClickOnCtaEscalationTestProcess() throws Throwable{
+        Thread.sleep(2000);
         esca = new EscalationsPO(driver);
         esca.escalations();
     }
 
     @Then("^Escalation Form One is displayed$")
-    public void escalationFormOneIsDisplayed() {
+    public void escalationFormOneIsDisplayed() throws Throwable {
+
         esca = new EscalationsPO(driver);
-        esca.formPage();
+//        esca.escalationFormPage();
     }
 
     @When("^I entered Testing in the Text field$")
-    public void iEnteredReferenceNumberInTheTextField() {
+    public void iEnteredReferenceNumberInTheTextField() throws Throwable {
+        Thread.sleep(3000);
         esca = new EscalationsPO(driver);
         esca.enterTest();
     }
@@ -59,8 +63,8 @@ public class Escalations_step extends DriverInstance {
     @Then("^My Request page is displayed with Data logs$")
     public void myRequestPageIsDisplayedWithDataLogs() {
         esca = new EscalationsPO(driver);
-        esca.myRequestFormPage();
-        esca.myRequestFormTable();
+//        esca.myRequestFormPage();
+//        esca.myRequestFormTable();
     }
 
     @And("^I enter Case ID in the Search field$")
@@ -80,7 +84,6 @@ public class Escalations_step extends DriverInstance {
         esca = new EscalationsPO(driver);
         esca.caseLogsPage();
     }
-
 
 
 }

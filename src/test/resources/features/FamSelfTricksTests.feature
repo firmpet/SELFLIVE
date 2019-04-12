@@ -1,4 +1,4 @@
-@rege
+@reg
 Feature: FAM SELF - Tricks Tests (Copy)
 
   Scenario: Useful Tricks Manual Test

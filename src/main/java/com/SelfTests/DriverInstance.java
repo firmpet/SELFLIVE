@@ -82,9 +82,9 @@ public class DriverInstance {
         driver.manage().window().maximize();
 
         //Sign In
-        driver.findElement(By.id("loginLink")).click();
-        driver.findElement(By.xpath("/html/body/div/div/div/div/div[4]/a")).click();
-        driver.findElement(By.linkText("Services")).click();
+//        driver.findElement(By.id("loginLink")).click();
+//        driver.findElement(By.xpath("/html/body/div/div/div/div/div[4]/a")).click();
+//        driver.findElement(By.linkText("Services")).click();
 
     }
 

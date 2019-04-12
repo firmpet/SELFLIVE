@@ -1,6 +1,7 @@
+@reg
 Feature: Login Test FAM (Copy)
 
-Scenario:
+Scenario: Login
  #Given I login with valid credentials
   When I click on Cta Home
   Then Home page is displayed

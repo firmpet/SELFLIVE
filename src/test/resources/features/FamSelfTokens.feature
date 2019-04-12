@@ -1,6 +1,7 @@
+
 Feature: FAM SELF - Tokens (Copy)
 
-Scenario:
+Scenario: Tokens
   #Given I login with valid credentials
   When I click on Cta Tokens Process
   Then All Tokens Form page is displayed

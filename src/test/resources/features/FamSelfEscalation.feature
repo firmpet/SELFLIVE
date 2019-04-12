@@ -1,3 +1,4 @@
+@reg
 Feature: FAM SELF - Escalation Stage 1 15mins till Stage 3 (Copy)
 
 Scenario: Escalation Test Process Stage One
