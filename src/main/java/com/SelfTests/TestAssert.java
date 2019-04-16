@@ -29,6 +29,19 @@ public class TestAssert {
         return result;
     }
 
+    public static boolean validateElementExistById(WebDriver driver, String Id) {
+        boolean result = false;
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 20);
+            wait.until(ExpectedConditions.elementToBeClickable(By.id(Id)));
+            driver.findElement(By.id(Id));
+            result = true;
+        } catch (Exception e) {
+        }
+        return result;
+
+    }
+
 
 
 

@@ -12,7 +12,7 @@ public class FamSelfDatabase_step extends DriverInstance {
 
 
     @When("^I select test from dropdown field and I enter email address in text field in Select List Check column$")
-    public void iSelectTestFromDropdownFieldAndIEnterEmailAddressInTextFieldInSelectListCheckColumn() {
+    public void iSelectTestFromDropdownFieldAndIEnterEmailAddressInTextFieldInSelectListCheckColumn() throws Throwable {
         dataB = new FamSelfDatabasePO(driver);
         dataB.optionsField();
         dataB.insertText();

@@ -2,7 +2,7 @@
 Feature: FAM SELF - Assignment (Copy)
 
 Scenario: Assignment Form submission
-  #Given I login with valid credentials
+  Given I login with valid credentials
   When I click on Cta Dashboard and Assignment Process
   And New Form page is displayed
   And I enter test summary date

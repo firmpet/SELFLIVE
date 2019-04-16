@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +21,10 @@ public class FamSelfCalculationsPO {
 
 
     //Define element locator
-    @FindBy (linkText = "//*[text()='Calculations Process']")
+    @FindBy (linkText = "Calculations Process")
     public WebElement CtaCalculationsProcess;
 
-    @FindBy(xpath = "//*[@id=\"page\"]/section/header/h1/span")
+    @FindBy(xpath = "//*[@id='page']/section/header/h1/span")
     public WebElement CalculationsForm;
 
     @FindBy (id = "comma")
@@ -50,7 +51,7 @@ public class FamSelfCalculationsPO {
     @FindBy (id = "lamppost")
     public WebElement LamppostDropdownField;
 
-    @FindBy (linkText = "Next")
+    @FindBy (className = "fa-chevron-right")
     public WebElement BtnNext;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[1]/ul/li[3]")
@@ -59,35 +60,40 @@ public class FamSelfCalculationsPO {
     @FindBy (css = "#AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417 > div > div > button.btn.btn-af.nextbutton.pull-right")
     public WebElement CtaNext;
 
-    @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[1]/ul/li[4]")
+    @FindBy (xpath = "//*[@id='AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417']/section[1]/ul/li[4]")
     public WebElement SubformsColumn;
 
-    @FindBy(linkText = "Add Record")
+    @FindBy(xpath = "//*[text()='Add Record']")
     public WebElement AddRecord;
 
     @FindBy (id = "amountToBeSummed")
     public WebElement AmountField;
 
-    @FindBy (css = "#AF-Form-14e5cfb1-979c-45d8-90e2-4dd38d6a2b0c > div > div > button.btn.btn-af.submitbutton.pull-right")
+    @FindBy (xpath = "//span[text()='Add Record']")
     public WebElement CtaAddRecord;
 
-    @FindBy (xpath = "//*[@id=\"AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417\"]/section[2]/section/div[2]/div/div[1]/table/tbody/tr/td[2]")
+    @FindBy (xpath = "//*[@id='AF-Form-03d61b5e-1366-4d86-ae3b-82548965e417']/section[2]/section/div[2]/div/div[1]/table/tbody/tr/td[2]")
     public WebElement TotalSum;
 
-    @FindBy (className = "submitbutton")
+    @FindBy (xpath = "//span[text()='Submit']")
     public WebElement CtaSubmit;
 
-    @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
+    @FindBy (xpath = "//*[@id='page']/section/section/div/div[1]/p[2]")
     public WebElement SuccessfulPage;
 
 
-    public void calculationsProcessLink(){
+
+    public void calculationsProcessLink() throws Throwable{
+        Thread.sleep(3000);
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaCalculationsProcess));
 
         CtaCalculationsProcess.click();      }
 
-    public void calculationsColumn(){                  CalculationsForm.isDisplayed();         }
+    public void calculationsColumn(){
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+        CalculationsForm.isDisplayed();         }
 
     public void insertText(){                          InputField.sendKeys("Footpath,Park,Road,Cycle Track");}
 
@@ -115,7 +121,7 @@ public class FamSelfCalculationsPO {
 
     public void recordBtn(){                           AddRecord.click();       }
 
-    public void textField(){                           AmountField.sendKeys("50");    }
+    public void textField(){                            AmountField.sendKeys("50");    }
 
     public void addRecordBtn(){                        CtaAddRecord.click();    }
 

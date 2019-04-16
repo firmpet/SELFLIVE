@@ -22,9 +22,6 @@ public class EscalationsPO {
 
 
     //Define element locator
-//    @FindBy (xpath = "//*[text()='Escalation Test Process 23022018']")
-//    public WebElement ctaEscalation;
-
     @FindBy (linkText = "Escalation Test Process 23022018")
     public WebElement ctaEscalation;
 
@@ -61,7 +58,7 @@ public class EscalationsPO {
 
 
     public void escalations() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(ctaEscalation));
@@ -84,7 +81,7 @@ public class EscalationsPO {
     }
 
 
-    public void escalationFormPage(){                   EscalationForm.isDisplayed();   }
+    //public void escalationFormPage(){                   EscalationForm.isDisplayed();   }
 
     public void enterTest(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
@@ -98,9 +95,9 @@ public class EscalationsPO {
         driver.switchTo().defaultContent();
     CtaMyRequestsV3.click();              }
 
-    public void myRequestFormPage(){          MyRequestPage.isDisplayed();        }
+    //public void myRequestFormPage(){          MyRequestPage.isDisplayed();        }
 
-    public void myRequestFormTable(){         MyRequestTable.isDisplayed();         }
+    //public void myRequestFormTable(){         MyRequestTable.isDisplayed();         }
 
     public void searchField(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));

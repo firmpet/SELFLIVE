@@ -1,8 +1,9 @@
 @reg
+
 Feature: Self - Interface Check (Copy)
 
   Scenario: Interface Check
-    #Given I login with valid credentials
+    Given I login with valid credentials
     When I click Cta FAQs
     Then FAQs dashboard is displayed
     When I click on Cta Services

@@ -5,26 +5,31 @@ import com.SelfTests.DriverInstance;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 
 public class FAMDatabaseTest_step extends DriverInstance {
     private FAMDatabaseTestPO data;
+      private Assert testAssert;
 
 
     @When("^I click on Cta Database Integration Test$")
-    public void iClickOnCtaDatabaseIntegrationTest() {
+    public void iClickOnCtaDatabaseIntegrationTest() throws Throwable {
         data = new FAMDatabaseTestPO(driver);
         data.databaseIntegrationBtn();
     }
 
     @And("^Database Integration Form One page is displayed$")
     public void databaseIntegrationFormOnePageIsDisplayed() {
-        data = new FAMDatabaseTestPO(driver);
-        data.dataIntegrationPage();
+
+        System.out.println(driver.getTitle());
+         //Assert.assertTrue(testAssert.validateElementExistByXpath(driver, "//*[text()='Database Integration Stage One Form']"));
+//        data = new FAMDatabaseTestPO(driver);
+//        data.dataIntegrationPage();
     }
 
     @And("^I fill in the dropdown fields$")
-    public void iFillInTheDropdownFields() {
+    public void iFillInTheDropdownFields() throws Throwable {
         data = new FAMDatabaseTestPO(driver);
         data.enterText();
         data.testBtn();
@@ -43,20 +48,23 @@ public class FAMDatabaseTest_step extends DriverInstance {
         data.readOnlySubform();
     }
 
-    @And("^I click Cta Next$")
-    public void iClickCtaNext(int arg0) {
+    @And("^I clicked Cta Next$")
+    public void iClickedCtaNext() throws Throwable{
+        Thread.sleep(2000);
         data = new FAMDatabaseTestPO(driver);
         data.nextLink();
     }
 
     @Then("^Add a Entry column is displayed$")
-    public void addAEntryColumnIsDisplayed() {
+    public void addAEntryColumnIsDisplayed() throws Throwable{
+        Thread.sleep(2000);
         data = new FAMDatabaseTestPO(driver);
         data.enterData();
     }
 
-    @When("^I fill in text, FirstNameadd and emailadd fields$")
-    public void iFillInTextFirstNameaddAndEmailaddFields(int arg0) {
+    @When("^I fill the text, FirstNameadd and emailadd fields$")
+    public void iFillTheTextFirstNameaddAndEmailaddFields() throws Throwable{
+        Thread.sleep(5000);
         data = new FAMDatabaseTestPO(driver);
         data.textField();
         data.nameField();

@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +21,10 @@ public class FamSelfHTTPLookUpPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*[text()='HTTP Examples and Testing.']")
+    @FindBy (linkText = "HTTP Examples and Testing.")
     public WebElement CtaHTTPAndTesting;
 
-    @FindBy (xpath = "//*[text()='HTTP Testing and Examples")
+    @FindBy (xpath = "//*[text()='HTTP Testing and Examples']")
     public WebElement HTTPDashboard;
 
     @FindBy (id = "clickMeImageShou")
@@ -44,10 +45,10 @@ public class FamSelfHTTPLookUpPO {
     @FindBy (className = "nextbutton")
     public WebElement NextButton;
 
-    @FindBy (id = "button2")
+    @FindBy (css = "#button2")
     public WebElement LookUpBtn;
 
-    @FindBy (className = "submitbutton")
+    @FindBy (xpath = "//*[text()='Submit']")
     public WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[text()='Thank you for submitting HTTP Testing and Examples']")
@@ -56,13 +57,17 @@ public class FamSelfHTTPLookUpPO {
 
 
 
-    public void httpTesting(){
+    public void httpTesting() throws Throwable{
+        Thread.sleep(3000);
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaHTTPAndTesting));
 
         CtaHTTPAndTesting.click();       }
 
-    public void testingPage(){               HTTPDashboard.isDisplayed();    }
+    public void testingPage(){
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+    HTTPDashboard.isDisplayed();    }
 
     public void lookUpBtn(){                 CtaLookUp.click();  }
 

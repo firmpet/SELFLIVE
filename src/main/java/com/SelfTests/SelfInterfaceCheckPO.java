@@ -1,11 +1,11 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class SelfInterfaceCheckPO {
 
@@ -20,54 +20,63 @@ public class SelfInterfaceCheckPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*[text()='FAQs']")
+    @FindBy (linkText = "FAQs")
     public WebElement FAQsCta;
 
     @FindBy (xpath = "//*[text()='Frequently Asked Questions']")
     public WebElement FAQPage;
 
-    @FindBy (xpath = "//*[text()='Services']")
+    @FindBy (linkText = "Services")
     public WebElement CtaServices;
 
-    @FindBy (xpath = "//*[text()='Services']")
+    @FindBy (name = "search")
     public WebElement ServicesPage;
 
-    @FindBy (xpath = "//*[text()='Dashboard']")
+    @FindBy (linkText = "Dashboard")
     public WebElement CtaDashboard;
 
     @FindBy (xpath = "//*[text()='New Forms']")
     public WebElement DashboardPage;
 
-    @FindBy (xpath = "//*[text()='MyRequests V3']")
+    @FindBy (linkText = "MyRequests V3")
     public WebElement CtaMyRequest;
 
     @FindBy (xpath = "//*[text()='My Requests']")
     public WebElement RequestCases;
 
-    @FindBy (xpath = "//*[text()='Capita Connect v3']")
+    @FindBy (linkText = "Capita Connect v3")
     public WebElement CtaCapitalConnect;
 
-    @FindBy (id = "Online Services")
+    @FindBy (xpath = "//*[text()='Online Services']")
     public WebElement OnlineServices;
 
 
 
+    public void faqsBtn() {                 FAQsCta.click();        }
 
-    public void faqsBtn(){
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(FAQsCta));
+    public void contentPage(){
+        driver.switchTo().frame(driver.findElement(By.id("NewFAQs")));
+    FAQPage.isDisplayed();    }
 
-        FAQsCta.click();        }
+    public void serviceBtn(){
+        driver.switchTo().defaultContent();
+        CtaServices.click();  }
 
-    public void contentPage(){                FAQPage.isDisplayed();    }
+    public void pagecontents(){
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
+    ServicesPage.isDisplayed();
 
-    public void serviceBtn(){                 CtaServices.click();  }
+        driver.switchTo().defaultContent();
+    }
 
-    public void pagecontents(){                ServicesPage.isDisplayed();   }
+    public void dashbtn(){                   CtaDashboard.click();  }
 
-    public void dashbtn(){                    CtaDashboard.click();  }
+    public void casesTable(){
+        driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
+    DashboardPage.isDisplayed()  ;
 
-    public void casesTable(){                 DashboardPage.isDisplayed()  ; }
+    driver.switchTo().defaultContent();
+    }
 
     public void requestLink(){               CtaMyRequest.click();}
 
@@ -75,6 +84,8 @@ public class SelfInterfaceCheckPO {
 
     public void connectNav(){               CtaCapitalConnect.click();  }
 
-    public void serviceLists(){             OnlineServices.isDisplayed(); }
+    public void serviceLists(){
+        driver.switchTo().frame(driver.findElement(By.id("CapitaConnect")));
+    OnlineServices.isDisplayed(); }
 
 }

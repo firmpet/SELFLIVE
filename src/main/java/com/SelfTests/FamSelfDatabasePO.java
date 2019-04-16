@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,13 +43,14 @@ public class FamSelfDatabasePO {
     public WebElement InputEmail;
 
 
-    public void optionsField(){
+    public void optionsField() throws Throwable{
+        Thread.sleep(2000);
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(DropdownField));
-
         DropdownField.click();                    }
 
-    public void insertText(){                     InputField.sendKeys("test");}
+    public void insertText()                      {    InputField.sendKeys("test");}
 
     public void clear(){                          Field.clear();         }
 

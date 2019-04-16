@@ -6,13 +6,15 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 
 public class FamSelfCalculations_step extends DriverInstance {
     private FamSelfCalculationsPO calcu;
+    private Assert testAssert;
 
     @When("^I click on Cta Calculations Process$")
-    public void iClickOnCtaCalculationsProcess() {
+    public void iClickOnCtaCalculationsProcess() throws Throwable {
         calcu = new FamSelfCalculationsPO(driver);
         calcu.calculationsProcessLink();
     }
@@ -36,13 +38,18 @@ public class FamSelfCalculations_step extends DriverInstance {
     }
 
     @And("^I select Yes from all the three dropdown fields$")
-    public void iSelectYesFromAllTheThreeDropdownFields() {
+    public void iSelectYesFromAllTheThreeDropdownFields() throws Throwable {
         calcu = new FamSelfCalculationsPO(driver);
         calcu.inputField();
+        Thread.sleep(2000);
         calcu.insertText1();
+        Thread.sleep(2000);
         calcu.inputField1();
+        Thread.sleep(2000);
         calcu.insertText2();
+        Thread.sleep(2000);
         calcu.inputField2();
+        Thread.sleep(2000);
         calcu.insertText3();
     }
 
@@ -58,8 +65,8 @@ public class FamSelfCalculations_step extends DriverInstance {
         calcu.stringManSection();
     }
 
-    @And("^I select Nextlink$")
-    public void iSelectCtaNext(int arg0) {
+    @And("^Select Nextlink$")
+    public void selectNextlink() {
         calcu = new FamSelfCalculationsPO(driver);
         calcu.nextBtn();
     }
@@ -71,15 +78,19 @@ public class FamSelfCalculations_step extends DriverInstance {
     }
 
     @And("^I click Cta Add Record$")
-    public void iClickCtaAddRecord() {
+    public void iClickCtaAddRecord() throws Throwable {
+        Thread.sleep(2000);
         calcu = new FamSelfCalculationsPO(driver);
         calcu.recordBtn();
+        Thread.sleep(3000);
     }
 
     @And("^I entered value in the field$")
-    public void iEnteredValueInTheField() {
+    public void iEnteredValueInTheField() throws Throwable {
         calcu = new FamSelfCalculationsPO(driver);
+        Thread.sleep(2000);
         calcu.textField();
+        Thread.sleep(5000);
         calcu.addRecordBtn();
     }
 
@@ -90,7 +101,8 @@ public class FamSelfCalculations_step extends DriverInstance {
     }
 
     @And("^I click Cta Submit$")
-    public void iClickCtaSubmit() {
+    public void iClickCtaSubmit() throws Throwable {
+        Thread.sleep(3000);
         calcu = new FamSelfCalculationsPO(driver);
         calcu.submitBtn();
     }
@@ -100,6 +112,7 @@ public class FamSelfCalculations_step extends DriverInstance {
         calcu = new FamSelfCalculationsPO(driver);
         calcu.submitPage();
     }
+
 
 
 }

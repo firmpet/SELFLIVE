@@ -15,7 +15,7 @@ public class FamSelfDateTest_step extends DriverInstance {
 
 
     @When("^I click on Cta Date Fields Manual Test$")
-    public void iClickOnCtaDateFieldsManualTest() {
+    public void iClickOnCtaDateFieldsManualTest() throws Throwable{
         dateT = new FamSelfDateTestPO(driver);
         dateT.dateFieldLink();
     }
@@ -27,11 +27,13 @@ public class FamSelfDateTest_step extends DriverInstance {
     }
 
     @When("^I enter date From, date To and time in the fields$")
-    public void iEnterDateFromDateToAndTimeInTheFields() {
+    public void iEnterDateFromDateToAndTimeInTheFields() throws Throwable {
         dateT = new FamSelfDateTestPO(driver);
         dateT.dateField();
         dateT.dateField1();
         dateT.timeField();
+
+        Thread.sleep(5000);
     }
 
     @And("^I click Cta submit$")

@@ -1,6 +1,7 @@
 package com.SelfTests;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,23 +46,26 @@ public class FamSelfAssignmentPO {
     @FindBy (id = "assignToSpecificG")
     public WebElement SpecificGroupField;
 
-    @FindBy (className = "btn btn-af submitbutton pull-right")
+    @FindBy (className = "submitbutton")
     public WebElement CtaSubmit;
 
-    @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
+    @FindBy (xpath = "//*[@id='page']/section/section/div/div[1]/p[2]")
     public WebElement SuccessfulSubmission;
 
 
 
 
-
-    public void dashboardAndAssignmentProcessLink(){
+    public void dashboardAndAssignmentProcessLink() throws Throwable{
+        Thread.sleep(3000);
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaDashboardAndAssignmentProcess));
 
         CtaDashboardAndAssignmentProcess.click();     }
 
-    public void formPage(){                                      DashboardPage.isDisplayed();                  }
+    public void formPage(){
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+    DashboardPage.isDisplayed();                  }
 
     public void clearField(){                                    SummaryField1.clear();                   }
 

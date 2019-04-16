@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +21,7 @@ public class FamSelfTricksTestsPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*span[text()='Useful Tricks Manual Test']")
+    @FindBy (linkText = "Useful Tricks Manual Test")
     public WebElement CtaTricksManual;
 
     @FindBy (xpath = "//*[text()='Useful Tricks Forms']")
@@ -53,13 +54,18 @@ public class FamSelfTricksTestsPO {
     @FindBy (id = "iShowWhenTheAbov")
     public WebElement ValidateField;
 
-    public void tricksManual (){
+    public void tricksManual () throws Throwable{
+        Thread.sleep(3000);
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaTricksManual));
 
         CtaTricksManual.click();}
 
-        public void formPage(){                                TricksPage.isDisplayed(); }
+        public void formPage(){
+            driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+
+            TricksPage.isDisplayed(); }
 
         public void fName(){                                   Firstname.sendKeys("David");}
 

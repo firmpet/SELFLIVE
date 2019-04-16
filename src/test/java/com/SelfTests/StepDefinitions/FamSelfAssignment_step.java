@@ -12,7 +12,7 @@ public class FamSelfAssignment_step extends DriverInstance {
 
 
     @When("^I click on Cta Dashboard and Assignment Process$")
-    public void iClickOnCtaDashboardAndAssignmentProcess() {
+    public void iClickOnCtaDashboardAndAssignmentProcess() throws Throwable {
         assign = new FamSelfAssignmentPO(driver);
         assign.dashboardAndAssignmentProcessLink();
     }
@@ -31,11 +31,15 @@ public class FamSelfAssignment_step extends DriverInstance {
     }
 
     @And("^I select email and group from the dropdown fields$")
-    public void iSelectEmailAndGroupFromTheDropdownFields() {
+    public void iSelectEmailAndGroupFromTheDropdownFields() throws Throwable{
         assign = new FamSelfAssignmentPO(driver);
+        Thread.sleep(3000);
         assign.userField();
+        Thread.sleep(3000);
         assign.enterEmail();
+        Thread.sleep(3000);
         assign.groupField();
+        Thread.sleep(3000);
         assign.groupName();
     }
 

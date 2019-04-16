@@ -2,7 +2,7 @@
 Feature: FAM SELF - Tricks Tests (Copy)
 
   Scenario: Useful Tricks Manual Test
-    #Given I login with valid credentials
+    Given I login with valid credentials
     When I click on Cta Useful Tricks Manual Test
     Then Useful Tricks Forms page is displayed
     When I enter names in the fields

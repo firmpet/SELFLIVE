@@ -5,13 +5,14 @@ import com.SelfTests.FamSelfHTTPLookUpPO;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class FamSelfHTTPLookUp_step extends DriverInstance {
     private FamSelfHTTPLookUpPO http;
 
 
     @When("^I click on Cta HTTP Examples and Testing$")
-    public void iClickOnCtaHTTPExamplesAndTesting() {
+    public void iClickOnCtaHTTPExamplesAndTesting() throws Throwable {
         http = new FamSelfHTTPLookUpPO(driver);
         http.httpTesting();
     }
@@ -57,14 +58,17 @@ public class FamSelfHTTPLookUp_step extends DriverInstance {
     @Then("^I click Cta LookUp to fill up the fields$")
     public void iClickCtaLookUpToFillUpTheFields() throws Throwable {
         http = new FamSelfHTTPLookUpPO(driver);
-        http.fillForm();
-
         Thread.sleep(3000);
+        http.fillForm();
     }
 
     @And("^I click on Cta Submit$")
-    public void iClickOnCtaSubmit() {
+    public void iClickOnCtaSubmit() throws Throwable{
+
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,500)", "");
         http = new FamSelfHTTPLookUpPO(driver);
+        Thread.sleep(3000);
         http.submitLink();
     }
 

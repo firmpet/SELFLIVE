@@ -13,7 +13,7 @@ public class FamSelfTricksTests_step extends DriverInstance {
 
 
     @When("^I click on Cta Useful Tricks Manual Test$")
-    public void iClickOnCtaUsefulTricksManualTest() {
+    public void iClickOnCtaUsefulTricksManualTest() throws Throwable{
      tricks = new FamSelfTricksTestsPO(driver);
      tricks.tricksManual();
     }

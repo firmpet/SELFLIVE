@@ -7,10 +7,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import gherkin.lexer.Th;
+import org.junit.Assert;
 
 public class Escalations_step extends DriverInstance {
     private EscalationsPO esca;
     private LoginPO hp;
+    private TestAssert testAssert;
 
 
     @Given("^I login with valid credentials$")
@@ -30,9 +32,12 @@ public class Escalations_step extends DriverInstance {
 
     @Then("^Escalation Form One is displayed$")
     public void escalationFormOneIsDisplayed() throws Throwable {
+        Thread.sleep(2000);
 
-        esca = new EscalationsPO(driver);
-//        esca.escalationFormPage();
+        Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[text()='Escalation Form One']"));
+
+            // esca = new EscalationsPO(driver);
+           //esca.escalationFormPage();
     }
 
     @When("^I entered Testing in the Text field$")
@@ -62,7 +67,9 @@ public class Escalations_step extends DriverInstance {
 
     @Then("^My Request page is displayed with Data logs$")
     public void myRequestPageIsDisplayedWithDataLogs() {
-        esca = new EscalationsPO(driver);
+        Assert.assertFalse(testAssert.validateElementExistById(driver, "My Requests"));
+        Assert.assertFalse(testAssert.validateElementExistById(driver, "MyRequestTable"));
+//        esca = new EscalationsPO(driver);
 //        esca.myRequestFormPage();
 //        esca.myRequestFormTable();
     }

@@ -2,7 +2,7 @@
 Feature: FAM SELF - HTTP Look Up’s (Copy)
 
 Scenario: HTTP Exmaples and Testing
-  #Given I login with valid credentials
+  Given I login with valid credentials
   When I click on Cta HTTP Examples and Testing
   Then HTTP Testing and Example page is displayed
   When I click Cta LookUp in HTTP Get No Token column

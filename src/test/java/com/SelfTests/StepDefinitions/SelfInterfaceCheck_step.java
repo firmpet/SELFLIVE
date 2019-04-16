@@ -10,14 +10,15 @@ public class SelfInterfaceCheck_step extends DriverInstance {
 
 
     @When("^I click Cta FAQs$")
-    public void iClickCtaFAQs() {
+    public void iClickCtaFAQs() throws Throwable{
         inter = new SelfInterfaceCheckPO(driver);
         inter.faqsBtn();
     }
 
     @Then("^FAQs dashboard is displayed$")
-    public void faqsDashboardIsDisplayed() {
+    public void faqsDashboardIsDisplayed() throws Throwable {
         inter = new SelfInterfaceCheckPO(driver);
+        Thread.sleep(3000);
         inter.contentPage();
     }
 
@@ -40,7 +41,7 @@ public class SelfInterfaceCheck_step extends DriverInstance {
     }
 
     @Then("^The Dashboard page is displayed$")
-    public void theDashboardPageIsDisplayed() {
+    public void theDashboardPageIsDisplayed() throws Throwable{
         inter = new SelfInterfaceCheckPO(driver);
         inter.casesTable();
     }

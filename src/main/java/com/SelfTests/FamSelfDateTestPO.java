@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,10 +20,10 @@ public class FamSelfDateTestPO {
     }
 
     //Define element locator
-    @FindBy (xpath = "//*[text()='Date Fields Manual Test']")
+    @FindBy (linkText = "Date Fields Manual Test")
     public WebElement CtaDateFieldsManual;
 
-    @FindBy (xpath = "//*[@id=\"page\"]/section/header/h1")
+    @FindBy (xpath = "//*[@id='page']/section/header/h1")
     public WebElement DateFieldPage;
 
     @FindBy (id = "date1")
@@ -41,13 +42,17 @@ public class FamSelfDateTestPO {
     public WebElement SubmissionPage;
 
 
-    public void dateFieldLink(){
+    public void dateFieldLink() throws Throwable{
+        Thread.sleep(3000);
+        driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaDateFieldsManual));
 
         CtaDateFieldsManual.click();          }
 
-    public void dashboard(){                     DateFieldPage.isDisplayed();    }
+    public void dashboard(){
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+    DateFieldPage.isDisplayed();    }
 
     public void dateField(){                     DateFrom.sendKeys("15012019");}
 

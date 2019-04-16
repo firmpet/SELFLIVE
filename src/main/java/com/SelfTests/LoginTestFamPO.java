@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,39 +21,30 @@ public class LoginTestFamPO {
 
 
     //Define element locator
-    @FindBy (xpath = "//*span[text()='Home']")
+    @FindBy (linkText = "Home")
     public WebElement CtaHome;
 
-    @FindBy (xpath = "//*span[text()='Take charge of your world!']")
+    @FindBy (xpath = "//*[text()='Take charge of your world!']")
     public WebElement Homepage;
 
-    @FindBy (xpath = "//*span[text()='FAQs']")
-    public WebElement CtaFAQs;
+    @FindBy (linkText = "MyRequests V3")
+    public WebElement CtaMyRequest;
 
-    @FindBy (xpath = "//*span[text()='Frequently Asked Questions']")
-    public WebElement FAQsPage;
-
-    @FindBy (xpath = "//*span[text()='MyRequests V3']")
-    public WebElement CtaMyRequestsV3;
-
-    @FindBy (xpath = "//*span[text()='My Requests']")
-    public WebElement RequestDashboard;
+    @FindBy (xpath = "//*[text()='My Requests']")
+    public WebElement RequestCase;
 
 
 
-    public void homeBtn (){
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(CtaHome));
 
-        CtaHome.click();       }
+    public void homeBtn () {                   CtaHome.click();       }
 
-    public void dashboard(){                   Homepage.isDisplayed();  }
+    public void dashboard(){                  Homepage.isDisplayed();  }
 
-    public void faqsBtn(){                     CtaFAQs.click();     }
+    public void myRequestBtn(){
+        driver.switchTo().defaultContent();
+    CtaMyRequest.click();}
 
-    public void faqsLink(){                    FAQsPage.isDisplayed(); }
+    public void requestCaseTables(){          RequestCase.isDisplayed();   }
 
-    public void requestV3Page(){               CtaMyRequestsV3.click();  }
 
-    public void requestTable(){                RequestDashboard.isDisplayed();  }
 }
