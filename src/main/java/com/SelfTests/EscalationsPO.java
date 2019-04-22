@@ -52,7 +52,7 @@ public class EscalationsPO {
     @FindBy (id = "search-submit")
     public WebElement CtaSearch;
 
-    @FindBy (xpath = "//*[@id='MyRequestTable']/tbody/tr[1]")
+    @FindBy (xpath = "//*[@id='hello-title']")
     public WebElement CaseLogs;
 
 

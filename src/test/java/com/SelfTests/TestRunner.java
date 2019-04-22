@@ -13,7 +13,7 @@ import java.util.Date;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = ".",
-        tags = "@reg",
+        tags = "@rege",
         format = {
                 "pretty", "html:target/cucumber-html-report",
                 "json:target/json/report_example.json",},
