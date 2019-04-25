@@ -49,7 +49,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 25, 2019 08:45:33 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 25, 2019 09:40:40 PM</span>
 				</a>
 			</li>
 			<li>
@@ -167,10 +167,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='52.632%'><span class='strong'>10</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='42.105%'><span class='strong'>8</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='5.263%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='42.105%'>8</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.263%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='52.632%'>10</span> others
 				</div>
 			</div>
 		</div>
@@ -187,12 +187,12 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Self - Case View</span>
-						<span class='test-time'>Apr 25, 2019 08:45:33 PM</span>
+						<span class='test-time'>Apr 25, 2019 09:40:40 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 1m 7s+732ms</span>
+	<span class='duration right label'>0h 0m 53s+282ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">TESTS-52 (Copy) (Copy) (Copy)</span>
@@ -262,28 +262,12 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='11' class='node and pass' status='pass'>
+		<li test-id='11' class='node and fail' status='fail'>
 			
 			<b>And</b>
 			
 			<span class="bdd-step-name">And click Cta Continue</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='12' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then Case view page is displayed</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='13' class='node when fail' status='fail'>
-			
-			<b>When</b>
-			
-			<span class="bdd-step-name">When I enter new credentials in the fields</span>
-				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"5cc020963246e"}
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Continue"}
   (Session info: chrome=73.0.3683.103)
   (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -291,9 +275,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
 System info: host: 'DESKTOP-DA90ENI', ip: '192.168.1.200', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\JOSHUA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54757}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
-Session ID: 2c9fbb71a32eaa88362e65532a6af080
-*** Element info: {Using=id, value=5cc020963246e}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\JOSHUA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55369}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: b6ed77081ad78b20abbba4ee0243924c
+*** Element info: {Using=link text, value=Continue}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -307,13 +291,32 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:416)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:246)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.SelfTests.SelfCaseViewPO.textField(SelfCaseViewPO.java:83)
-	at com.SelfTests.StepDefinitions.SelfCaseView_step.iEnterNewCredentialsInTheFields(SelfCaseView_step.java:79)
-	at ✽.When I enter new credentials in the fields(src/test/resources/features/SelfCaseView.feature:15)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at com.SelfTests.SelfCaseViewPO.continueBtn(SelfCaseViewPO.java:75)
+	at com.SelfTests.StepDefinitions.SelfCaseView_step.clickCtaContinue(SelfCaseView_step.java:59)
+	at ✽.And click Cta Continue(src/test/resources/features/SelfCaseView.feature:13)
 </pre></div>
+			
+		</li>
+		<li test-id='12' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Case view page is displayed</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='13' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I enter new credentials in the fields</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
 		<li test-id='14' class='node and skip' status='skip'>
@@ -459,7 +462,7 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 25, 2019 08:45:33 PM</td>
+										<td>Apr 25, 2019 09:40:40 PM</td>
 										<td class='linked' test-id='1'>Self - Case View</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -522,9 +525,9 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Apr 25, 2019 08:46:22 PM</td>
-                                                        <td class='linked' test-id='13'>Self - Case View.TESTS-52 (Copy) (Copy) (Copy).When I enter new credentials in the fields</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"5cc020963246e"}
+                                                        <td>Apr 25, 2019 09:41:23 PM</td>
+                                                        <td class='linked' test-id='11'>Self - Case View.TESTS-52 (Copy) (Copy) (Copy).And click Cta Continue</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Continue"}
   (Session info: chrome=73.0.3683.103)
   (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -532,9 +535,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
 System info: host: 'DESKTOP-DA90ENI', ip: '192.168.1.200', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\JOSHUA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54757}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
-Session ID: 2c9fbb71a32eaa88362e65532a6af080
-*** Element info: {Using=id, value=5cc020963246e}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\JOSHUA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55369}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: b6ed77081ad78b20abbba4ee0243924c
+*** Element info: {Using=link text, value=Continue}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -548,12 +551,15 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:416)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:246)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.SelfTests.SelfCaseViewPO.textField(SelfCaseViewPO.java:83)
-	at com.SelfTests.StepDefinitions.SelfCaseView_step.iEnterNewCredentialsInTheFields(SelfCaseView_step.java:79)
-	at ✽.When I enter new credentials in the fields(src/test/resources/features/SelfCaseView.feature:15)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at com.SelfTests.SelfCaseViewPO.continueBtn(SelfCaseViewPO.java:75)
+	at com.SelfTests.StepDefinitions.SelfCaseView_step.clickCtaContinue(SelfCaseView_step.java:59)
+	at ✽.And click Cta Continue(src/test/resources/features/SelfCaseView.feature:13)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -598,19 +604,19 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 25, 2019 08:45:33 PM</div>
+					<div class='panel-lead'>Apr 25, 2019 09:40:40 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 25, 2019 08:46:42 PM</div>
+			 		<div class='panel-lead'>Apr 25, 2019 09:41:34 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>68,883ms</div>
+					<div class='panel-lead'>54,477ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -689,14 +695,14 @@ Session ID: 2c9fbb71a32eaa88362e65532a6af080
 				infoChild: 0,
 				exceptionsChild: 1,
 				
-				passGrandChild: 10,
+				passGrandChild: 8,
 				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 8,
+				skipGrandChild: 10,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 9,
+				exceptionsGrandChild: 11,
 			};
 		</script>
 		
