@@ -31,6 +31,9 @@ public class SelfCaseViewPO {
     @FindBy (xpath = "//*[text()='Thank you for submitting Stage 1 Case View']")
     public WebElement RefPage;
 
+    @FindBy (linkText = "MyRequests V3")
+    public WebElement MyRequestsV3Cta;
+
     @FindBy (xpath = "//*[@id='MyRequestTable']/tbody/tr[1]/td[1]")
     public WebElement Reference;
 
@@ -60,6 +63,11 @@ public class SelfCaseViewPO {
 
     public void submitOutcoume(){                          RefPage.isDisplayed();        }
 
+    public void requestV3Link(){
+        driver.navigate().to("https://releasetesting-self.achieveservice.com/en");
+
+        MyRequestsV3Cta.click();         }
+
     public void refTable(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
     Reference.click();    }
@@ -69,11 +77,18 @@ public class SelfCaseViewPO {
     public void caseView(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     Stage2CaseView.isDisplayed();
-
-        //driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='5cb738c24c2d5']")));
     }
 
-    public void textField(){                              Stage2NameField.sendKeys("Testing");     }
+    public void textField(){
+        //driver.switchTo().frame(driver.findElement(By.xpath("//*[@src='/fillform/?iframe_id=5cc020963246e']")));
+
+        driver.switchTo().frame(driver.findElement(By.id("5cc020963246e")));
+
+//        driver.switchTo().defaultContent();
+//        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1"))).findElements(By.id("5cc020963246e"));
+
+
+        Stage2NameField.sendKeys("Testing");     }
 
     public void numberField(){                            Stage2NumberField.sendKeys("9870");}
 

@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class SelfCaseView_step extends DriverInstance {
     private SelfCaseViewPO selfCase;
@@ -40,6 +41,12 @@ public class SelfCaseView_step extends DriverInstance {
         selfCase.submitOutcoume();
     }
 
+    @When("^I click Cta MyRequests VThree$")
+    public void iClickCtaMyRequestsVThree() {
+        selfCase = new SelfCaseViewPO(driver);
+        selfCase.requestV3Link();
+    }
+
     @And("^Searched for reference$")
     public void searchedForReference() {
         selfCase = new SelfCaseViewPO(driver);
@@ -60,6 +67,13 @@ public class SelfCaseView_step extends DriverInstance {
 
     @When("^I enter new credentials in the fields$")
     public void iEnterNewCredentialsInTheFields() throws Throwable {
+        Thread.sleep(3000);
+
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,350)", "");
+
+        Thread.sleep(3000);
+
         selfCase = new SelfCaseViewPO(driver);
         Thread.sleep(3000);
         selfCase.textField();
@@ -79,6 +93,7 @@ public class SelfCaseView_step extends DriverInstance {
 
     @Then("^results page is displayed with stages number$")
     public void resultsPageIsDisplayedWithStagesNumber() {
+
         selfCase = new SelfCaseViewPO(driver);
     }
 
