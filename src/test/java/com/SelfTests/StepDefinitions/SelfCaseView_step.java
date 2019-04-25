@@ -70,7 +70,7 @@ public class SelfCaseView_step extends DriverInstance {
         Thread.sleep(3000);
 
         JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("window.scrollBy(0,350)", "");
+        jse.executeScript("window.scrollBy(0,500)", "");
 
         Thread.sleep(3000);
 

@@ -80,17 +80,11 @@ public class SelfCaseViewPO {
     }
 
     public void textField(){
-        //driver.switchTo().frame(driver.findElement(By.xpath("//*[@src='/fillform/?iframe_id=5cc020963246e']")));
-
         driver.switchTo().frame(driver.findElement(By.id("5cc020963246e")));
-
-//        driver.switchTo().defaultContent();
-//        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1"))).findElements(By.id("5cc020963246e"));
-
 
         Stage2NameField.sendKeys("Testing");     }
 
-    public void numberField(){                            Stage2NumberField.sendKeys("9870");}
+    public void numberField(){                         Stage2NumberField.sendKeys("9870");}
 
 
 
