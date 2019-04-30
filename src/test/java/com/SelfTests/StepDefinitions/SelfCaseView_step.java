@@ -2,20 +2,37 @@ package com.SelfTests.StepDefinitions;
 
 import com.SelfTests.DriverInstance;
 import com.SelfTests.SelfCaseViewPO;
+import com.SelfTests.TestAssert;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
+import javax.xml.xpath.XPath;
+
 public class SelfCaseView_step extends DriverInstance {
     private SelfCaseViewPO selfCase;
+    private TestAssert testAssert;
 
-
-    @When("^I navigate to Case View page$")
-    public void iNavigateToCaseViewPage() {
-        driver.navigate().to("https://releasetesting-self.achieveservice.com/service/Case_View_Test");
+    @When("^I navigate to Case View \"([^\"]*)\"$")
+    public void iNavigateToCaseView(String URLpage) throws Throwable {
+        Thread.sleep(5000);
+        selfCase = new SelfCaseViewPO(driver);
+        selfCase.caseViewPage(URLpage);
     }
+//    @When("^I navigate to Case View page$")
+//    public void iNavigateToCaseViewPage() throws Throwable {
+//        //Thread.sleep(5000);
+//        driver.navigate().to("https://releasetesting-self.achieveservice.com/service/Case_View_Test");
+//
+//    }
+//    @When("^I navigate to Case View page$")
+//    public void iNavigateToCaseViewPage() throws Throwable {
+//        Thread.sleep(5000);
+//        selfCase.caseViewPage();
+//       }
 
     @Then("^Case View should displayed$")
     public void caseViewShouldDisplayed() {
@@ -36,7 +53,8 @@ public class SelfCaseView_step extends DriverInstance {
     }
 
     @Then("^Submission with reference page is displayed$")
-    public void submissionWithReferencePageIsDisplayed() {
+    public void submissionWithReferencePageIsDisplayed() throws Throwable {
+        Thread.sleep(2000);
         selfCase = new SelfCaseViewPO(driver);
         selfCase.submitOutcoume();
     }
@@ -60,41 +78,78 @@ public class SelfCaseView_step extends DriverInstance {
     }
 
     @Then("^Case view page is displayed$")
-    public void caseViewPageIsDisplayed() {
+    public void caseViewPageIsDisplayed() throws Throwable {
         selfCase = new SelfCaseViewPO(driver);
+        Thread.sleep(1000);
+
+
         selfCase.caseView();
     }
 
     @When("^I enter new credentials in the fields$")
     public void iEnterNewCredentialsInTheFields() throws Throwable {
-        Thread.sleep(3000);
-
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("window.scrollBy(0,500)", "");
-
-        Thread.sleep(3000);
 
         selfCase = new SelfCaseViewPO(driver);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         selfCase.textField();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         selfCase.numberField();
 
         //Upload File from C drive
         driver.findElement(By.className("resumable-browse-file")).sendKeys("C:\\Users\\Joshua Ayoade\\Pictures\\IP ss.PNG");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
+    }
+
+    @Then("^Submission reference page is displayed$")
+    public void submissionReferencePageIsDisplayed() {
+        selfCase = new SelfCaseViewPO(driver);
+        Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[@id='current-tasks']/div/div[1]/h4"));
+    }
+
+    @When("^I click Cta Dashboard$")
+    public void iClickCtaDashboard() throws Throwable{
+        selfCase = new SelfCaseViewPO(driver);
+        //selfCase.refPage();
+        driver.navigate().to("https://releasetesting-self.achieveservice.com/CommonDashboard");
+
+        Thread.sleep(6000);
     }
 
     @And("^Searched for case reference$")
-    public void searchedForCaseReference() {
+    public void searchedForCaseReference() throws Throwable{
         selfCase = new SelfCaseViewPO(driver);
-        
+        selfCase.searchField();
+        Thread.sleep(3000);
+    }
+
+    @Then("^I clicks Cta Continue$")
+    public void iClicksCtaContinue() {
+        selfCase = new SelfCaseViewPO(driver);
+        selfCase.continues();
+    }
+
+    @When("^I entered credentials in the fields$")
+    public void iEnteredCredentialsInTheFields() throws Throwable {
+        selfCase = new SelfCaseViewPO(driver);
+
+        Thread.sleep(3000);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,5000)", "");
+
+        Thread.sleep(3000);
+        selfCase.inputText();
+        Thread.sleep(3000);
+        selfCase.inputNumber();
+
+        //Upload File from C drive
+        driver.findElement(By.className("resumable-browse-file")).sendKeys("C:\\Users\\Joshua Ayoade\\Pictures\\IP ss.PNG");
+        //Thread.sleep(1000);
     }
 
     @Then("^results page is displayed with stages number$")
     public void resultsPageIsDisplayedWithStagesNumber() {
-
         selfCase = new SelfCaseViewPO(driver);
+        Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[@id='heading3']/p"));
     }
 
 

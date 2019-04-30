@@ -6,7 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ResourceBundle;
+
 public class SelfCaseViewPO {
+    ResourceBundle config;
 
     private WebDriver driver;
 
@@ -15,6 +18,7 @@ public class SelfCaseViewPO {
 
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        config=ResourceBundle.getBundle("ConFig");
     }
 
 
@@ -49,30 +53,59 @@ public class SelfCaseViewPO {
     @FindBy (id = "number11")
     public WebElement Stage2NumberField;
 
+//    @FindBy (xpath = "//*[@id=\"current-tasks\"]/div/div[1]/h4")
+//    public WebElement Stage2Confirmation;
+
+    @FindBy (xpath = "//*[@id='AllProcesses']/div[1]/div[2]/div/input")
+    public WebElement SearchRef;
+
+    @FindBy(xpath = "//*[@id='AllProcesses']/table/tbody/tr[2]/td[11]/button[2]")
+    public WebElement ContinueCta;
+
+    @FindBy (id = "text12")
+    public WebElement Stage3Text;
+
+    @FindBy(id = "number12")
+    public WebElement Stage3Number;
 
 
+
+
+    public void caseViewPage(String URLpage){
+        driver.navigate().to(config.getString(URLpage));
+    }
 
     public void casePage(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     Stage1CaseView.isDisplayed();
     }
 
-    public void caseName(){                                TextField.sendKeys("Lambeth");}
+    public void caseName(){
+        TextField.sendKeys("Lambeth");
+    }
 
-    public void numbers(){                                 NumberField.sendKeys("4234");}
+    public void numbers(){
+        NumberField.sendKeys("4234");
+    }
 
-    public void submitOutcoume(){                          RefPage.isDisplayed();        }
+    public void submitOutcoume(){
+        RefPage.isDisplayed();
+    }
 
     public void requestV3Link(){
         driver.navigate().to("https://releasetesting-self.achieveservice.com/en");
 
-        MyRequestsV3Cta.click();         }
+        MyRequestsV3Cta.click();
+    }
 
     public void refTable(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
-    Reference.click();    }
+    Reference.click();
+    }
 
-    public void continueBtn(){                             CtaContinue.click();   }
+    public void continueBtn(){
+        CtaContinue.click();
+    }
 
     public void caseView(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
@@ -80,13 +113,60 @@ public class SelfCaseViewPO {
     }
 
     public void textField(){
-        driver.switchTo().frame(driver.findElement(By.id("5cc020963246e")));
 
-        Stage2NameField.sendKeys("Testing");     }
+//                driver.switchTo().frame("//body[@class='AF-Category-Hidden']");
+//        driver.switchTo().defaultContent();
+        //driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1"))).switchTo().frame(driver.findElement(By.xpath("//*[@id='5cc70b3632ae5']")));
+        //driver.switchTo().frame(driver.findElement(By.xpath("//*[text()='iFrame Process - Section 2']")));
+//       driver.switchTo().frame(driver.findElement(By.xpath("//*[@class='achieveforms-iframe']")));
+//        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='5cc70b3632ae5']")));
 
-    public void numberField(){                         Stage2NumberField.sendKeys("9870");}
+//        int size = driver.findElements(By.tagName("iframe")).size();
+//        System.out.println("Total Frames --" + size);
+        driver.switchTo().frame(1);
 
+        Stage2NameField.sendKeys("Testing");
+    }
+
+    public void numberField(){
+        Stage2NumberField.sendKeys("9870");
+    }
+
+//    public void refPage(){
+//        Stage2Confirmation.isDisplayed();
+//    }
+
+    public void searchField()throws Throwable{
+
+        driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
+        SearchRef.sendKeys("FS-Case-116247897");
+
+        Thread.sleep(3000);
+    }
+
+    public void continues(){
+
+        ContinueCta.click();
+    }
+
+    public void inputText()throws Throwable{
+        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+        Thread.sleep(4);
+
+//        int size = driver.findElements(By.tagName("iframe")).size();
+//        System.out.println("Total Frames --" + size);
+        driver.switchTo().frame(2);
+
+        //Thread.sleep(3000);
+        Stage3Text.sendKeys("FS-Case-116247897");
+    }
+
+    public void inputNumber(){
+        Stage3Number.sendKeys("3526");
+    }
 
 
 
 }
+
+

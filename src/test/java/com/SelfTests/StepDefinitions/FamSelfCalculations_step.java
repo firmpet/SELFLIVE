@@ -102,7 +102,7 @@ public class FamSelfCalculations_step extends DriverInstance {
 
     @And("^I click Cta Submit$")
     public void iClickCtaSubmit() throws Throwable {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         calcu = new FamSelfCalculationsPO(driver);
         calcu.submitBtn();
     }

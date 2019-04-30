@@ -15,6 +15,11 @@ public class MyRequestDateCheck_step extends DriverInstance {
         dateCheck = new MyRequestDateCheckPO(driver);
     }
 
+    @And("^I clicked Cta Submit$")
+    public void iClickedCtaSubmit() {
+        dateCheck = new MyRequestDateCheckPO(driver);
+    }
+
     @Then("^Reference and submission successful message is displayed$")
     public void referenceAndSubmissionSuccessfulMessageIsDisplayed() {
         dateCheck = new MyRequestDateCheckPO(driver);
@@ -49,8 +54,16 @@ public class MyRequestDateCheck_step extends DriverInstance {
 
     }
 
+    @And("^I clicked search$")
+    public void iClickedSearch() {
+        dateCheck = new MyRequestDateCheckPO(driver);
+    }
+
     @Then("^the result is displayed$")
     public void theResultIsDisplayed() {
         dateCheck = new MyRequestDateCheckPO(driver);
     }
+
+
+
 }

@@ -49,8 +49,8 @@ public class DriverInstance {
             System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
             driver = new ChromeDriver();            //Comment to run chrome headless
 
-            //System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
-            //driver = new FirefoxDriver();
+//            System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
+//            driver = new FirefoxDriver();
 
 //            System.setProperty("webdriver.edge.driver", "src/Drivers/MicrosoftWebDriver.exe");
 //            driver = new EdgeDriver();
