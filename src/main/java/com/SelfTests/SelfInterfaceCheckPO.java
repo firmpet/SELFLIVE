@@ -21,71 +21,73 @@ public class SelfInterfaceCheckPO {
 
     //Define element locator
     @FindBy (linkText = "FAQs")
-    public WebElement FAQsCta;
+    private WebElement FAQsCta;
 
     @FindBy (xpath = "//*[text()='Frequently Asked Questions']")
-    public WebElement FAQPage;
+    private WebElement FAQPage;
 
     @FindBy (linkText = "Services")
-    public WebElement CtaServices;
+    private WebElement CtaServices;
 
     @FindBy (name = "search")
-    public WebElement ServicesPage;
+    private WebElement ServicesPage;
 
     @FindBy (linkText = "Dashboard")
-    public WebElement CtaDashboard;
+    private WebElement CtaDashboard;
 
     @FindBy (xpath = "//*[text()='New Forms']")
-    public WebElement DashboardPage;
+    private WebElement DashboardPage;
 
     @FindBy (linkText = "MyRequests V3")
-    public WebElement CtaMyRequest;
+    private WebElement CtaMyRequest;
 
     @FindBy (xpath = "//*[text()='My Requests']")
-    public WebElement RequestCases;
+    private WebElement RequestCases;
 
     @FindBy (linkText = "Capita Connect v3")
-    public WebElement CtaCapitalConnect;
+    private WebElement CtaCapitalConnect;
 
     @FindBy (xpath = "//*[text()='Online Services']")
-    public WebElement OnlineServices;
+    private WebElement OnlineServices;
 
 
 
-    public void faqsBtn() {                 FAQsCta.click();        }
-
+    public void faqsBtn() {
+        FAQsCta.click();
+    }
     public void contentPage(){
         driver.switchTo().frame(driver.findElement(By.id("NewFAQs")));
-    FAQPage.isDisplayed();    }
-
+    FAQPage.isDisplayed();
+    }
     public void serviceBtn(){
         driver.switchTo().defaultContent();
-        CtaServices.click();  }
-
+        CtaServices.click();
+    }
     public void pagecontents(){
         driver.switchTo().frame(driver.findElement(By.id("MyServices")));
     ServicesPage.isDisplayed();
-
         driver.switchTo().defaultContent();
     }
-
-    public void dashbtn(){                   CtaDashboard.click();  }
-
+    public void dashbtn(){
+        CtaDashboard.click();
+    }
     public void casesTable(){
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
     DashboardPage.isDisplayed()  ;
-
     driver.switchTo().defaultContent();
     }
-
-    public void requestLink(){               CtaMyRequest.click();}
-
-    public void casesLog(){                  RequestCases.isDisplayed(); }
-
-    public void connectNav(){               CtaCapitalConnect.click();  }
-
+    public void requestLink() {
+        CtaMyRequest.click();
+    }
+    public void casesLog()  {
+        RequestCases.isDisplayed();
+    }
+    public void connectNav()  {
+        CtaCapitalConnect.click();
+    }
     public void serviceLists(){
         driver.switchTo().frame(driver.findElement(By.id("CapitaConnect")));
-    OnlineServices.isDisplayed(); }
+    OnlineServices.isDisplayed();
+    }
 
 }

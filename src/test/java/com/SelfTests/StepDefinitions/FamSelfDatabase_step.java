@@ -8,12 +8,11 @@ import cucumber.api.java.en.When;
 
 
 public class FamSelfDatabase_step extends DriverInstance {
-    private FamSelfDatabasePO dataB;
+    private FamSelfDatabasePO dataB = new FamSelfDatabasePO(driver);
 
 
     @When("^I select test from dropdown field and I enter email address in text field in Select List Check column$")
     public void iSelectTestFromDropdownFieldAndIEnterEmailAddressInTextFieldInSelectListCheckColumn() throws Throwable {
-        dataB = new FamSelfDatabasePO(driver);
         dataB.optionsField();
         dataB.insertText();
         dataB.clear();
@@ -22,7 +21,6 @@ public class FamSelfDatabase_step extends DriverInstance {
 
     @And("^I fill in firstaname, lastname and email in the fields$")
     public void iFillInFirstanameLastnameAndEmailInTheFields() {
-        dataB = new FamSelfDatabasePO(driver);
         dataB.fName();
         dataB.lName();
         dataB.emailField();

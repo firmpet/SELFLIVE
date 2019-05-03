@@ -22,25 +22,25 @@ public class FamSelfDatabasePO {
 
     //Define element locator
     @FindBy (id = "select1")
-    public WebElement DropdownField;
+    private WebElement DropdownField;
 
     @FindBy (id = "select1")
-    public WebElement InputField;
+    private WebElement InputField;
 
     @FindBy (id = "text1")
-    public WebElement Field;
+    private WebElement Field;
 
     @FindBy (id = "text1")
-    public WebElement Email;
+    private WebElement Email;
 
     @FindBy (id = "LastNameadd")
-    public WebElement LastName;
+    private WebElement LastName;
 
     @FindBy (id = "FirstNameadd")
-    public WebElement FirstName;
+    private WebElement FirstName;
 
     @FindBy (id = "emailadd")
-    public WebElement InputEmail;
+    private WebElement InputEmail;
 
 
     public void optionsField() throws Throwable{
@@ -48,17 +48,24 @@ public class FamSelfDatabasePO {
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(DropdownField));
-        DropdownField.click();                    }
-
-    public void insertText()                      {    InputField.sendKeys("test");}
-
-    public void clear(){                          Field.clear();         }
-
-    public void insertEmail(){                    Email.sendKeys("support@example.com");}
-
-    public void lName(){                          LastName.sendKeys("David");}
-
-    public void fName(){                          FirstName.sendKeys("Daniel");}
-
-    public void emailField(){                     InputEmail.sendKeys("test@example.com");}
+        DropdownField.click();
+    }
+    public void insertText() {
+        InputField.sendKeys("test");
+    }
+    public void clear(){
+        Field.clear();
+    }
+    public void insertEmail(){
+        Email.sendKeys("support@example.com");
+    }
+    public void lName(){
+        LastName.sendKeys("David");
+    }
+    public void fName(){
+        FirstName.sendKeys("Daniel");
+    }
+    public void emailField(){
+        InputEmail.sendKeys("test@example.com");
+    }
 }

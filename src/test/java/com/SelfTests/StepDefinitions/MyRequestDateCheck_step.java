@@ -7,61 +7,51 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class MyRequestDateCheck_step extends DriverInstance {
-    private MyRequestDateCheckPO dateCheck;
+    private MyRequestDateCheckPO dateCheck = new MyRequestDateCheckPO(driver);
 
 
     @When("^I enter text field$")
     public void iEnterTextField() {
-        dateCheck = new MyRequestDateCheckPO(driver);
     }
 
     @And("^I clicked Cta Submit$")
     public void iClickedCtaSubmit() {
-        dateCheck = new MyRequestDateCheckPO(driver);
     }
 
     @Then("^Reference and submission successful message is displayed$")
     public void referenceAndSubmissionSuccessfulMessageIsDisplayed() {
-        dateCheck = new MyRequestDateCheckPO(driver);
     }
 
     @When("^I click Cta Continue$")
     public void iClickCtaContinue() {
-        dateCheck = new MyRequestDateCheckPO(driver);
-
     }
 
     @Then("^Survey page is displayed$")
     public void surveyPageIsDisplayed() {
-        dateCheck = new MyRequestDateCheckPO(driver);
-
     }
 
     @When("^I click top nav MyRequests VThree$")
     public void iClickTopNavMyRequestsVThree() {
-        dateCheck = new MyRequestDateCheckPO(driver);
-
     }
 
     @And("^my My Request page is displayed$")
     public void myMyRequestPageIsDisplayed() {
-        dateCheck = new MyRequestDateCheckPO(driver);
+
     }
 
     @And("^I enter into searchField$")
     public void iEnterIntoSearchField() {
-        dateCheck = new MyRequestDateCheckPO(driver);
 
     }
 
     @And("^I clicked search$")
-    public void iClickedSearch() {
-        dateCheck = new MyRequestDateCheckPO(driver);
+    public void iClickedSearch(){
+
     }
 
     @Then("^the result is displayed$")
     public void theResultIsDisplayed() {
-        dateCheck = new MyRequestDateCheckPO(driver);
+
     }
 
 

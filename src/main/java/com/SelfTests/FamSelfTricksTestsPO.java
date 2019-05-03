@@ -22,37 +22,37 @@ public class FamSelfTricksTestsPO {
 
     //Define element locator
     @FindBy (linkText = "Useful Tricks Manual Test")
-    public WebElement CtaTricksManual;
+    private WebElement CtaTricksManual;
 
     @FindBy (xpath = "//*[text()='Useful Tricks Forms']")
-    public WebElement TricksPage;
+    private WebElement TricksPage;
 
     @FindBy (id = "text1")
-    public WebElement Firstname;
+    private WebElement Firstname;
 
     @FindBy (id = "text2")
-    public WebElement Lastname;
+    private WebElement Lastname;
 
     @FindBy (id = "selectdisplay")
-    public WebElement SelectField;
+    private WebElement SelectField;
 
     @FindBy (id = "selectdisplay")
-    public WebElement InsertText;
+    private WebElement InsertText;
 
     @FindBy (id = "text3")
-    public WebElement NumberField;
+    private WebElement NumberField;
 
     @FindBy (id = "text4")
-    public WebElement NumbersField;
+    private WebElement NumbersField;
 
     @FindBy (id = "dateOfBirth")
-    public WebElement DOBField;
+    private WebElement DOBField;
 
     @FindBy (id = "thisFieldHasAVal")
-    public WebElement PostCode;
+    private WebElement PostCode;
 
     @FindBy (id = "iShowWhenTheAbov")
-    public WebElement ValidateField;
+    private WebElement ValidateField;
 
     public void tricksManual () throws Throwable{
         Thread.sleep(3000);
@@ -60,29 +60,38 @@ public class FamSelfTricksTestsPO {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaTricksManual));
 
-        CtaTricksManual.click();}
-
+        CtaTricksManual.click();
+    }
         public void formPage(){
             driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-
-            TricksPage.isDisplayed(); }
-
-        public void fName(){                                   Firstname.sendKeys("David");}
-
-        public void lName(){                                   Lastname.sendKeys("Daniel");}
-
-        public void dropdownField(){                           SelectField.click();}
-
-        public void texts(){                                    InsertText.sendKeys("Yes");}
-
-        public void digit(){                                   NumberField.sendKeys("2");}
-
-        public void digits(){                                  NumbersField.sendKeys("3");}
-
-        public void dob(){                                     DOBField.sendKeys("20112018");}
-
-        public void postal(){                                  PostCode.sendKeys("EC2A 2DT");}
-
-        public void verifier(){                                ValidateField.sendKeys("Validity");}
+            TricksPage.isDisplayed();
+    }
+        public void fName(){
+        Firstname.sendKeys("David");
+    }
+        public void lName(){
+        Lastname.sendKeys("Daniel");
+    }
+        public void dropdownField(){
+        SelectField.click();
+    }
+        public void texts(){
+        InsertText.sendKeys("Yes");
+    }
+        public void digit(){
+        NumberField.sendKeys("2");
+    }
+        public void digits(){
+        NumbersField.sendKeys("3");
+    }
+        public void dob(){
+        DOBField.sendKeys("20112018");
+    }
+        public void postal(){
+        PostCode.sendKeys("EC2A 2DT");
+    }
+        public void verifier(){
+        ValidateField.sendKeys("Validity");
+    }
 
 }

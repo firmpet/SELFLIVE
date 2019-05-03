@@ -31,6 +31,7 @@ public class FAMDatabaseTest_step extends DriverInstance {
     @And("^I fill in the dropdown fields$")
     public void iFillInTheDropdownFields() throws Throwable {
         data = new FAMDatabaseTestPO(driver);
+        Thread.sleep(3000);
         data.enterText();
         data.testBtn();
         data.enterEmail();

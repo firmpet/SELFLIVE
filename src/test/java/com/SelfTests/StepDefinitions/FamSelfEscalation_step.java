@@ -4,5 +4,5 @@ import com.SelfTests.DriverInstance;
 import com.SelfTests.FamSelfEscalationPO;
 
 public class FamSelfEscalation_step extends DriverInstance {
-    private FamSelfEscalationPO selfEsca;
+    private FamSelfEscalationPO selfEsca = new FamSelfEscalationPO(driver);
 }

@@ -23,37 +23,37 @@ public class EscalationsPO {
 
     //Define element locator
     @FindBy (linkText = "Escalation Test Process 23022018")
-    public WebElement ctaEscalation;
+    private WebElement ctaEscalation;
 
     @FindBy (className = "Escalation Form One")
-    public WebElement EscalationForm;
+    private WebElement EscalationForm;
 
     @FindBy (xpath = "//*[@id='enterSomeText']")
-    public WebElement testField;
+    private WebElement testField;
 
     @FindBy (className = "submitText")
-    public WebElement CtaSubmit;
+    private WebElement CtaSubmit;
 
     @FindBy (css = "#page>section>section>div>div.submission-message-content.clearfix>p:nth-child(2)")
-    public WebElement SubmitSuccessfully;
+    private WebElement SubmitSuccessfully;
 
     @FindBy (linkText = "MyRequests V3")
-    public WebElement CtaMyRequestsV3;
+    private WebElement CtaMyRequestsV3;
 
     @FindBy (id = "hello-title")
-    public WebElement MyRequestPage;
+    private WebElement MyRequestPage;
 
     @FindBy (id = "MyRequestTable")
-    public WebElement MyRequestTable;
+    private WebElement MyRequestTable;
 
     @FindBy (id = "search-input")
-    public WebElement Search;
+    private WebElement Search;
 
     @FindBy (id = "search-submit")
-    public WebElement CtaSearch;
+    private WebElement CtaSearch;
 
     @FindBy (xpath = "//*[@id='hello-title']")
-    public WebElement CaseLogs;
+    private WebElement CaseLogs;
 
 
 
@@ -85,31 +85,32 @@ public class EscalationsPO {
 
     public void enterTest(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        testField.sendKeys("Testing");  }
-
-    public void submitBtn(){                  CtaSubmit.click();             }
-
-    public void submissionPage(){             SubmitSuccessfully.isDisplayed();         }
-
+        testField.sendKeys("Testing");
+    }
+    public void submitBtn(){
+        CtaSubmit.click();
+    }
+    public void submissionPage(){
+        SubmitSuccessfully.isDisplayed();
+    }
     public void myRequestsV3Link(){
         driver.switchTo().defaultContent();
-    CtaMyRequestsV3.click();              }
-
+    CtaMyRequestsV3.click();
+    }
     //public void myRequestFormPage(){          MyRequestPage.isDisplayed();        }
 
     //public void myRequestFormTable(){         MyRequestTable.isDisplayed();         }
 
     public void searchField(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
-        Search.sendKeys("FS-Case-112975008");}
-
-    public void searchBtn(){                  CtaSearch.click();          }
-
-    public void caseLogsPage(){               CaseLogs.isDisplayed();      }
-
-
-
-
+        Search.sendKeys("FS-Case-112975008");
+    }
+    public void searchBtn(){
+        CtaSearch.click();
+    }
+    public void caseLogsPage(){
+        CaseLogs.isDisplayed();
+    }
 
 
 

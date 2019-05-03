@@ -22,37 +22,37 @@ public class FamSelfHTTPLookUpPO {
 
     //Define element locator
     @FindBy (linkText = "HTTP Examples and Testing.")
-    public WebElement CtaHTTPAndTesting;
+    private WebElement CtaHTTPAndTesting;
 
     @FindBy (xpath = "//*[text()='HTTP Testing and Examples']")
-    public WebElement HTTPDashboard;
+    private WebElement HTTPDashboard;
 
     @FindBy (id = "clickMeImageShou")
-    public WebElement CtaLookUp;
+    private WebElement CtaLookUp;
 
     @FindBy (xpath = "//*[@id=\"AF-Form-e4819683-7697-4063-91c9-5a213637a31b\"]/div/div/button[2]")
-    public WebElement CtaNext;
+    private WebElement CtaNext;
 
     @FindBy (id = "breedname")
-    public WebElement TextField;
+    private WebElement TextField;
 
     @FindBy (id = "breedname")
-    public WebElement BreedNmae;
+    private WebElement BreedNmae;
 
     @FindBy (id = "button1")
-    public WebElement LookUpCta;
+    private WebElement LookUpCta;
 
     @FindBy (className = "nextbutton")
-    public WebElement NextButton;
+    private WebElement NextButton;
 
     @FindBy (css = "#button2")
-    public WebElement LookUpBtn;
+    private WebElement LookUpBtn;
 
     @FindBy (xpath = "//*[text()='Submit']")
-    public WebElement CtaSubmit;
+    private WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[text()='Thank you for submitting HTTP Testing and Examples']")
-    public WebElement SubmissionResult;
+    private WebElement SubmissionResult;
 
 
 
@@ -63,29 +63,39 @@ public class FamSelfHTTPLookUpPO {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaHTTPAndTesting));
 
-        CtaHTTPAndTesting.click();       }
-
+        CtaHTTPAndTesting.click();
+    }
     public void testingPage(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-    HTTPDashboard.isDisplayed();    }
-
-    public void lookUpBtn(){                 CtaLookUp.click();  }
-
-    public void nextBtn(){                   CtaNext.click();   }
-
-    public void clearField(){                TextField.clear();   }
-
-    public void insertname(){                BreedNmae.sendKeys("BullDog");}
-
-    public void lookUpbtn(){                 LookUpCta.click();    }
-
-    public void nextcta(){                   NextButton.click();   }
-
-    public void fillForm(){                  LookUpBtn.click();   }
-
-    public void submitLink(){                CtaSubmit.click();   }
-
-    public void submitInfo(){                SubmissionResult.isDisplayed();    }
+    HTTPDashboard.isDisplayed();
+    }
+    public void lookUpBtn(){
+        CtaLookUp.click();
+    }
+    public void nextBtn(){
+        CtaNext.click();
+    }
+    public void clearField(){
+        TextField.clear();
+    }
+    public void insertname(){
+        BreedNmae.sendKeys("BullDog");
+    }
+    public void lookUpbtn(){
+        LookUpCta.click();
+    }
+    public void nextcta(){
+        NextButton.click();
+    }
+    public void fillForm(){
+        LookUpBtn.click();
+    }
+    public void submitLink(){
+        CtaSubmit.click();
+    }
+    public void submitInfo(){
+        SubmissionResult.isDisplayed();
+    }
 
 
 }

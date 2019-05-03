@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -44,10 +45,20 @@ public class DriverInstance {
             //create Edge instance
             driver = new EdgeDriver();
         }
+        //Check if parameter passed as 'IE'
+        else if(conFig.getString("browser").equalsIgnoreCase("Edge")){
+            //set path to IE.exe
+            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
+            //create IE instance
+            driver = new InternetExplorerDriver();
+        }
         else {
 
             System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
             driver = new ChromeDriver();            //Comment to run chrome headless
+//
+//            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
+//            driver = new InternetExplorerDriver();
 
 //            System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
 //            driver = new FirefoxDriver();

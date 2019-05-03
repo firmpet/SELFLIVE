@@ -21,13 +21,13 @@ public class LoginPO {
 
     //Define element locator
     @FindBy(id = "loginLink")
-    public WebElement loginLink;
+    private WebElement loginLink;
 
 //    @FindBy(xpath = "/html/body/div/div/div/div/div[4]/a")
-//    public WebElement trfButton;
+//    private WebElement trfButton;
 //
 //    @FindBy(linkText = "Services")
-//    public WebElement servicesButton;
+//    private WebElement servicesButton;
 //
 //    //sign in
 //    public void Login() {
@@ -41,19 +41,19 @@ public class LoginPO {
 //    }
 
     @FindBy (xpath = "/html/body/div/div/div/div/div[5]/a")
-    public WebElement trfButton;
+    private WebElement trfButton;
 
     @FindBy (linkText = "Services")
-    public WebElement servicesButton;
+    private WebElement servicesButton;
 
     @FindBy (name = "username")
-    public WebElement Username;
+    private WebElement Username;
 
     @FindBy (name = "password")
-    public WebElement Password;
+    private WebElement Password;
 
     @FindBy (xpath = "/html/body/div/div/div/form/fieldset/div[3]/button")
-    public WebElement SignInBtn;
+    private WebElement SignInBtn;
 
     //sign in
     public void Login(){

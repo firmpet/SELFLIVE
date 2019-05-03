@@ -23,34 +23,34 @@ public class FamSelfAssignmentPO {
 
     //Define element locator
     @FindBy (xpath = "//*[text()='Dashboard and Assignment Process']")
-    public WebElement CtaDashboardAndAssignmentProcess;
+    private WebElement CtaDashboardAndAssignmentProcess;
 
     @FindBy (className = "_formName")
-    public WebElement DashboardPage;
+    private WebElement DashboardPage;
 
     @FindBy (id = "summary_show")
-    public WebElement SummaryField1;
+    private WebElement SummaryField1;
 
     @FindBy (id = "summary_show")
-    public WebElement SummaryField;
+    private WebElement SummaryField;
 
     @FindBy (id = "select1")
-    public WebElement SpecificUserField;
+    private WebElement SpecificUserField;
 
     @FindBy (id = "select1")
-    public WebElement UserEmail;
+    private WebElement UserEmail;
 
     @FindBy (id = "assignToSpecificG")
-    public WebElement SpecificGroup;
+    private WebElement SpecificGroup;
 
     @FindBy (id = "assignToSpecificG")
-    public WebElement SpecificGroupField;
+    private WebElement SpecificGroupField;
 
     @FindBy (className = "submitbutton")
-    public WebElement CtaSubmit;
+    private WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[@id='page']/section/section/div/div[1]/p[2]")
-    public WebElement SuccessfulSubmission;
+    private WebElement SuccessfulSubmission;
 
 
 
@@ -61,27 +61,36 @@ public class FamSelfAssignmentPO {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(CtaDashboardAndAssignmentProcess));
 
-        CtaDashboardAndAssignmentProcess.click();     }
-
+        CtaDashboardAndAssignmentProcess.click();
+    }
     public void formPage(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-    DashboardPage.isDisplayed();                  }
-
-    public void clearField(){                                    SummaryField1.clear();                   }
-
-    public void enterText(){                                     SummaryField.sendKeys("Summary Test 2019-04-08");}
-
-    public void userField(){                                     SpecificUserField.click();        }
-
-    public void enterEmail(){                                    UserEmail.sendKeys("petermalt@firmstep.com");}
-
-    public void groupField(){                                    SpecificGroup.click();         }
-
-    public void groupName(){                                     SpecificGroupField.sendKeys("CSA");}
-
-    public void submitBtn(){                                     CtaSubmit.click();     }
-
-    public void formSubmit(){                                    SuccessfulSubmission.isDisplayed(); }
+    DashboardPage.isDisplayed();
+    }
+    public void clearField(){
+        SummaryField1.clear();
+    }
+    public void enterText(){
+        SummaryField.sendKeys("Summary Test 2019-04-08");
+    }
+    public void userField(){
+        SpecificUserField.click();
+    }
+    public void enterEmail(){
+        UserEmail.sendKeys("petermalt@firmstep.com");
+    }
+    public void groupField(){
+        SpecificGroup.click();
+    }
+    public void groupName(){
+        SpecificGroupField.sendKeys("CSA");
+    }
+    public void submitBtn(){
+        CtaSubmit.click();
+    }
+    public void formSubmit(){
+        SuccessfulSubmission.isDisplayed();
+    }
 
 
 

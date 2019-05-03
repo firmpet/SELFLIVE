@@ -10,13 +10,12 @@ import gherkin.lexer.Th;
 import org.junit.Assert;
 
 public class Escalations_step extends DriverInstance {
-    private EscalationsPO esca;
+    private EscalationsPO esca = new EscalationsPO(driver);
     private LoginPO hp;
     private TestAssert testAssert;
 
 
     @Given("^I login with valid credentials$")
-
     public void iLoginWithValidCredentials() {
     hp = new LoginPO(driver);
     hp.Login();
@@ -26,42 +25,33 @@ public class Escalations_step extends DriverInstance {
     @When("^I click on Cta Escalation Test Process$")
     public void iClickOnCtaEscalationTestProcess() throws Throwable{
         Thread.sleep(2000);
-        esca = new EscalationsPO(driver);
         esca.escalations();
     }
 
     @Then("^Escalation Form One is displayed$")
     public void escalationFormOneIsDisplayed() throws Throwable {
         Thread.sleep(2000);
-
         Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[text()='Escalation Form One']"));
-
-            // esca = new EscalationsPO(driver);
-           //esca.escalationFormPage();
     }
 
     @When("^I entered Testing in the Text field$")
     public void iEnteredReferenceNumberInTheTextField() throws Throwable {
         Thread.sleep(3000);
-        esca = new EscalationsPO(driver);
         esca.enterTest();
     }
 
     @And("^I click Cta Submit1$")
     public void iClickCtaSubmit() {
-        esca = new EscalationsPO(driver);
         esca.submitBtn();
     }
 
     @Then("^Submission successful page is displayed$")
     public void submissionSuccessfulPageIsDisplayed() {
-        esca = new EscalationsPO(driver);
         esca.submissionPage();
     }
 
     @When("^I click on Cta MyRequests VThree$")
     public void iClickOnCtaMyRequestsVThree() {
-        esca = new EscalationsPO(driver);
         esca.myRequestsV3Link();
     }
 
@@ -69,26 +59,20 @@ public class Escalations_step extends DriverInstance {
     public void myRequestPageIsDisplayedWithDataLogs() {
         Assert.assertFalse(testAssert.validateElementExistById(driver, "My Requests"));
         Assert.assertFalse(testAssert.validateElementExistById(driver, "MyRequestTable"));
-//        esca = new EscalationsPO(driver);
-//        esca.myRequestFormPage();
-//        esca.myRequestFormTable();
     }
 
     @And("^I enter Case ID in the Search field$")
     public void iEnterCaseIDInTheSearchField() {
-        esca = new EscalationsPO(driver);
         esca.searchField();
     }
 
     @And("^I click search$")
     public void iClickSearch() {
-        esca = new EscalationsPO(driver);
         esca.searchBtn();
     }
 
     @Then("^The case log info is display with stages indicated$")
     public void theCaseLogInfoIsDisplayWithStagesIndicated() {
-        esca = new EscalationsPO(driver);
         esca.caseLogsPage();
     }
 

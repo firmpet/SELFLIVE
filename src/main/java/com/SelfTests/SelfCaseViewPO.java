@@ -24,49 +24,49 @@ public class SelfCaseViewPO {
 
     //Define element locator
     @FindBy (xpath = "//*[text()='Stage 1 Case View']")
-    public WebElement Stage1CaseView;
+    private WebElement Stage1CaseView;
 
     @FindBy (id = "text")
-    public WebElement TextField;
+    private WebElement TextField;
 
     @FindBy (id = "number1")
-    public WebElement NumberField;
+    private WebElement NumberField;
 
     @FindBy (xpath = "//*[text()='Thank you for submitting Stage 1 Case View']")
-    public WebElement RefPage;
+    private WebElement RefPage;
 
     @FindBy (linkText = "MyRequests V3")
-    public WebElement MyRequestsV3Cta;
+    private WebElement MyRequestsV3Cta;
 
     @FindBy (xpath = "//*[@id='MyRequestTable']/tbody/tr[1]/td[1]")
-    public WebElement Reference;
+    private WebElement Reference;
 
     @FindBy (linkText = "Continue")
-    public WebElement CtaContinue;
+    private WebElement CtaContinue;
 
     @FindBy (xpath = "//*[@id='current-tasks']/div/div[1]/h4")
-    public WebElement Stage2CaseView;
+    private WebElement Stage2CaseView;
 
     @FindBy (id = "text1")
-    public WebElement Stage2NameField;
+    private WebElement Stage2NameField;
 
     @FindBy (id = "number11")
-    public WebElement Stage2NumberField;
+    private WebElement Stage2NumberField;
 
 //    @FindBy (xpath = "//*[@id=\"current-tasks\"]/div/div[1]/h4")
-//    public WebElement Stage2Confirmation;
+//    private WebElement Stage2Confirmation;
 
     @FindBy (xpath = "//*[@id='AllProcesses']/div[1]/div[2]/div/input")
-    public WebElement SearchRef;
+    private WebElement SearchRef;
 
     @FindBy(xpath = "//*[@id='AllProcesses']/table/tbody/tr[2]/td[11]/button[2]")
-    public WebElement ContinueCta;
+    private WebElement ContinueCta;
 
     @FindBy (id = "text12")
-    public WebElement Stage3Text;
+    private WebElement Stage3Text;
 
     @FindBy(id = "number12")
-    public WebElement Stage3Number;
+    private WebElement Stage3Number;
 
 
 
@@ -74,39 +74,30 @@ public class SelfCaseViewPO {
     public void caseViewPage(String URLpage){
         driver.navigate().to(config.getString(URLpage));
     }
-
     public void casePage(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     Stage1CaseView.isDisplayed();
     }
-
-    public void caseName(){
+    public void caseName() {
         TextField.sendKeys("Lambeth");
     }
-
     public void numbers(){
         NumberField.sendKeys("4234");
     }
-
     public void submitOutcoume(){
         RefPage.isDisplayed();
     }
-
     public void requestV3Link(){
         driver.navigate().to("https://releasetesting-self.achieveservice.com/en");
-
         MyRequestsV3Cta.click();
     }
-
     public void refTable(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
     Reference.click();
     }
-
     public void continueBtn(){
         CtaContinue.click();
     }
-
     public void caseView(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     Stage2CaseView.isDisplayed();
@@ -137,30 +128,24 @@ public class SelfCaseViewPO {
 //    }
 
     public void searchField()throws Throwable{
-
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        SearchRef.sendKeys("FS-Case-116247897");
-
+        SearchRef.sendKeys("FS-Case-116247888");
         Thread.sleep(3000);
     }
-
     public void continues(){
-
         ContinueCta.click();
     }
-
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(4);
+        Thread.sleep(4000);
 
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(2);
 
         //Thread.sleep(3000);
-        Stage3Text.sendKeys("FS-Case-116247897");
+        Stage3Text.sendKeys("FS-Case-116911000");
     }
-
     public void inputNumber(){
         Stage3Number.sendKeys("3526");
     }

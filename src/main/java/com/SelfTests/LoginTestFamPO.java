@@ -22,29 +22,33 @@ public class LoginTestFamPO {
 
     //Define element locator
     @FindBy (linkText = "Home")
-    public WebElement CtaHome;
+    private WebElement CtaHome;
 
     @FindBy (xpath = "//*[text()='Take charge of your world!']")
-    public WebElement Homepage;
+    private WebElement Homepage;
 
     @FindBy (linkText = "MyRequests V3")
-    public WebElement CtaMyRequest;
+    private WebElement CtaMyRequest;
 
     @FindBy (xpath = "//*[text()='My Requests']")
-    public WebElement RequestCase;
+    private WebElement RequestCase;
 
 
 
 
-    public void homeBtn () {                   CtaHome.click();       }
-
-    public void dashboard(){                  Homepage.isDisplayed();  }
-
+    public void homeBtn () {
+        CtaHome.click();
+    }
+    public void dashboard(){
+        Homepage.isDisplayed();
+    }
     public void myRequestBtn(){
         driver.switchTo().defaultContent();
-    CtaMyRequest.click();}
-
-    public void requestCaseTables(){          RequestCase.isDisplayed();   }
+    CtaMyRequest.click();
+    }
+    public void requestCaseTables(){
+        RequestCase.isDisplayed();
+    }
 
 
 }
