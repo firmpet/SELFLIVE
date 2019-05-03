@@ -18,7 +18,7 @@ public class SelfCaseView_step extends DriverInstance {
 
     @When("^I navigate to Case View \"([^\"]*)\"$")
     public void iNavigateToCaseView(String URLpage) throws Throwable {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         selfCase.caseViewPage(URLpage);
     }
 //    @When("^I navigate to Case View page$")

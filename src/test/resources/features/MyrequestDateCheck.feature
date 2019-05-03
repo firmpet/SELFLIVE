@@ -1,8 +1,9 @@
-
+@rege
 Feature: Myrequests - [Date Check] (Copy)
 
 Scenario: MyRequest Date Check
   Given I login with valid credentials
+  And I navigate to request date check "DateURL"
   When I enter text field
   And I clicked Cta Submit
   Then Reference and submission successful message is displayed
