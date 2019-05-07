@@ -77,6 +77,8 @@ public class MyRequestDateCheck_step extends DriverInstance {
 
     @Then("^the result is displayed$")
     public void theResultIsDisplayed() {
+        String text = driver.findElement(By.xpath("//*[text()='Myrequests date check']")).getText();
+        assertTrue(text.contains("Myrequests date check"));
 
     }
 

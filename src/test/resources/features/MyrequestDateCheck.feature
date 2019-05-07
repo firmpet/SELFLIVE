@@ -1,4 +1,4 @@
-@rege
+@reg
 Feature: Myrequests - [Date Check] (Copy)
 
 Scenario: MyRequest Date Check

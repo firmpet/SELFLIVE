@@ -81,7 +81,7 @@ public class SelfCaseViewPO {
     public void caseName() {
         TextField.sendKeys("Lambeth");
     }
-    public void numbers(){
+    public void numbers()   {
         NumberField.sendKeys("4234");
     }
     public void submitOutcoume(){
@@ -102,7 +102,6 @@ public class SelfCaseViewPO {
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     Stage2CaseView.isDisplayed();
     }
-
     public void textField(){
 
 //                driver.switchTo().frame("//body[@class='AF-Category-Hidden']");

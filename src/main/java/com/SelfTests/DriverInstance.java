@@ -56,7 +56,7 @@ public class DriverInstance {
 
             System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
             driver = new ChromeDriver();            //Comment to run chrome headless
-//
+
 //            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
 //            driver = new InternetExplorerDriver();
 

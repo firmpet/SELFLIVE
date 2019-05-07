@@ -35,7 +35,7 @@ public class MyRequestDateCheckPO {
     @FindBy(linkText = "MyRequests V3")
     private WebElement CtaMyRequests;
 
-    @FindBy (xpath = "//*[text()='Search']")
+    @FindBy (xpath = "//*[@id='search-input']")
     private WebElement SearchField;
 
     @FindBy (id = "search-submit")
@@ -45,9 +45,7 @@ public class MyRequestDateCheckPO {
 
 
 
-
-
-    public void requestDateCheck(String DateURL){
+    public void requestDateCheck(String DateURL)   {
         driver.navigate().to(config.getString(DateURL));
     }
     public void inputText() throws Throwable{
@@ -55,14 +53,16 @@ public class MyRequestDateCheckPO {
         Thread.sleep(2000);
         TextField.sendKeys("Testing");
     }
-    public void submitBtn(){
+    public void submitBtn()  {
         CtaSubmit.click();
     }
-    public void continueBtn(){
+    public void continueBtn()  {
         CtaContinue.click();
     }
     public void myRequestLnk(){
         CtaMyRequests.click();
+
+        driver.switchTo().defaultContent();
     }
     public void textRef()throws Throwable{
         Thread.sleep(2000);
@@ -70,7 +70,7 @@ public class MyRequestDateCheckPO {
         Thread.sleep(2000);
         SearchField.sendKeys("FS-Case-117107182");
     }
-    public void search(){
+    public void search()  {
         SearchBtn.click();
     }
 }

@@ -30,6 +30,6 @@ public class Hooks {
             scenario.embed(screenshotBytes, "image/png");
 
         }
-       // dm.closeBrowser();
+        dm.closeBrowser();
     }
 }

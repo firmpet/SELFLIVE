@@ -81,39 +81,41 @@ public class FAMDatabaseTestPO {
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
         Select1Field.click();
     }
-    public void testBtn(){
+    public void testBtn()   {
         CtaTest.click();
     }
-    public void enterEmail(){
+    public void enterEmail()   {
         Email.sendKeys("support@firmstep.com");
     }
-    public void nextBtn(){
+    public void nextBtn()   {
         Next.click();
     }
-    public void readOnlySubform(){
+    public void readOnlySubform()   {
         ReadOnlySubformColumn.isDisplayed();
     }
-    public void nextLink(){
+    public void nextLink()   {
         CtaNext.click();
     }
-    public void enterData(){
+    public void enterData()   {
         CtaAddAEntry.isDisplayed();
     }
-    public void textField(){
+    public void textField()    {
         EnterName.sendKeys("Dan");
     }
-    public void nameField(){
+    public void nameField()    {
         FirstName.sendKeys("David");
     }
-    public void email(){
+    public void email()   {
         EnterEmail.sendKeys("test@example.com");
     }
-    public void submitBtn(){
+    public void submitBtn()   {
         Submit.click();
     }
-    public void successPage(){
+    public void successPage()    {
         SubmissionPage.isDisplayed();
     }
+
+
 
 
 }

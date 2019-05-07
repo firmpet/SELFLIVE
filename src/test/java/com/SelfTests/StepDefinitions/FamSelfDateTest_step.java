@@ -30,7 +30,7 @@ public class FamSelfDateTest_step extends DriverInstance {
         dateT.dateField1();
         dateT.timeField();
 
-        Thread.sleep(5000);
+        Thread.sleep(4000);
     }
 
     @And("^I click Cta submit$")
