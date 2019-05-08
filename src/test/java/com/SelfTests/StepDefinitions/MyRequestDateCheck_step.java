@@ -3,17 +3,14 @@ package com.SelfTests.StepDefinitions;
 import com.SelfTests.DriverInstance;
 import com.SelfTests.MyRequestDateCheckPO;
 import com.SelfTests.TestAssert;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.Th;
-import org.apache.xpath.XPath;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertTrue;
-import static sun.plugin.javascript.navig.JSType.URL;
+
 
 public class MyRequestDateCheck_step extends DriverInstance {
     private TestAssert testAssert;

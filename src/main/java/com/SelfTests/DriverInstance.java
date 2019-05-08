@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -18,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverInstance {
     public static WebDriver driver;
-
 
 
     //This will open the browser
@@ -66,6 +66,7 @@ public class DriverInstance {
 //            System.setProperty("webdriver.edge.driver", "src/Drivers/MicrosoftWebDriver.exe");
 //            driver = new EdgeDriver();
 
+
             //############## Uncomment to run chrome headless ###################
 
             /*
@@ -79,6 +80,14 @@ public class DriverInstance {
 
         }
 
+
+//        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+//
+//        // Settings to Accept the SSL Certificate in the Capability object
+//        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//
+//        InternetExplorerDriver driver = new InternetExplorerDriver(capabilities);
+
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
         ChromeOptions opts = new ChromeOptions();
@@ -87,10 +96,11 @@ public class DriverInstance {
 
 
         driver.manage().deleteAllCookies();
-
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(conFig.getString("URL"));
+        //driver.navigate().to("javascript:document.getElementById('overridelink').click()");
         driver.manage().window().maximize();
+
 
         //Sign In
 //        driver.findElement(By.id("loginLink")).click();

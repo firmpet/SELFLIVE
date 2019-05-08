@@ -11,16 +11,14 @@ import org.junit.Assert;
 
 public class Escalations_step extends DriverInstance {
     private EscalationsPO esca = new EscalationsPO(driver);
-    private LoginPO hp;
+    private LoginPO hp = new LoginPO(driver);
     private TestAssert testAssert;
 
 
     @Given("^I login with valid credentials$")
     public void iLoginWithValidCredentials() {
-    hp = new LoginPO(driver);
     hp.Login();
     }
-
 
     @When("^I click on Cta Escalation Test Process$")
     public void iClickOnCtaEscalationTestProcess() throws Throwable{
