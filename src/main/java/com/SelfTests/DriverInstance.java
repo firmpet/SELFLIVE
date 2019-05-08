@@ -46,13 +46,13 @@ public class DriverInstance {
             driver = new EdgeDriver();
         }
         //Check if parameter passed as 'IE'
-        else if(conFig.getString("browser").equalsIgnoreCase("Edge")){
+        else if(conFig.getString("browser").equalsIgnoreCase("IE")){
             //set path to IE.exe
             System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
             //create IE instance
             driver = new InternetExplorerDriver();
         }
-        else {
+        else{
 
             System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
             driver = new ChromeDriver();            //Comment to run chrome headless
