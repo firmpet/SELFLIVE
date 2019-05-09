@@ -104,13 +104,8 @@ public class SelfCaseViewPO {
     }
     public void textField(){
 
-//                driver.switchTo().frame("//body[@class='AF-Category-Hidden']");
 //        driver.switchTo().defaultContent();
-        //driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1"))).switchTo().frame(driver.findElement(By.xpath("//*[@id='5cc70b3632ae5']")));
-        //driver.switchTo().frame(driver.findElement(By.xpath("//*[text()='iFrame Process - Section 2']")));
-//       driver.switchTo().frame(driver.findElement(By.xpath("//*[@class='achieveforms-iframe']")));
-//        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='5cc70b3632ae5']")));
-
+//        driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1"))).switchTo().frame(driver.findElement(By.xpath("//*[@id='5cc70b3632ae5']")));
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(1);
@@ -128,7 +123,7 @@ public class SelfCaseViewPO {
 
     public void searchField()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        SearchRef.sendKeys("FS-Case-116247888");
+        SearchRef.sendKeys("FS-Case-118015963");
         Thread.sleep(3000);
     }
     public void continues(){
@@ -142,8 +137,7 @@ public class SelfCaseViewPO {
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(2);
 
-        //Thread.sleep(3000);
-        Stage3Text.sendKeys("FS-Case-116911000");
+        Stage3Text.sendKeys("FS-Case-118015963");
     }
     public void inputNumber(){
         Stage3Number.sendKeys("3526");
