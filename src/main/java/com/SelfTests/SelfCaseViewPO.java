@@ -137,7 +137,7 @@ public class SelfCaseViewPO {
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(2);
 
-        Stage3Text.sendKeys("FS-Case-118015963");
+        Stage3Text.sendKeys("FS-Case-120234013");
     }
     public void inputNumber(){
         Stage3Number.sendKeys("3526");
