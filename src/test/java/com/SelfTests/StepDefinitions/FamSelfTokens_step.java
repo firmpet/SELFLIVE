@@ -16,7 +16,7 @@ public class FamSelfTokens_step extends DriverInstance {
     }
 
     @Then("^All Tokens Form page is displayed$")
-    public void allTokensFormPageIsDisplayed() {
+    public void allTokensFormPageIsDisplayed() throws Throwable{
         token.tokenLists();
     }
 

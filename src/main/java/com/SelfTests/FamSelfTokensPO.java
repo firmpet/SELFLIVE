@@ -25,7 +25,7 @@ public class FamSelfTokensPO {
     @FindBy (linkText = "Tokens Process")
     private WebElement CtaTokens;
 
-    @FindBy (xpath = "//*[text()='All Tokens Form']")
+    @FindBy (xpath = "//h1[@class='formName']")
     private WebElement TokensDashboard;
 
     @FindBy (xpath = "//*[text()='Next']")
@@ -74,7 +74,8 @@ public class FamSelfTokensPO {
         driver.switchTo().frame(driver.findElement(By.id("MyServices")));
         CtaTokens.click();
     }
-    public void tokenLists(){
+    public void tokenLists()throws Throwable{
+        Thread.sleep(2000);
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
         TokensDashboard.isDisplayed();
     }
