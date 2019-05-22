@@ -1,6 +1,6 @@
 @reg
 Feature: Login Test FAM (Copy)
-
+@smoke
 Scenario: Login
   Given I login with valid credentials
   When I click on Cta Home

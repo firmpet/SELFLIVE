@@ -18,7 +18,7 @@ public class FamSelfTricksTests_step extends DriverInstance {
     }
 
    @Then("^Useful Tricks Forms page is displayed$")
-    public void usefulTricksFormsPageIsDisplayed() {
+    public void usefulTricksFormsPageIsDisplayed()throws Throwable {
      tricks.formPage();
     }
 

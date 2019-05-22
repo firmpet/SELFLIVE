@@ -1,5 +1,6 @@
 package com.SelfTests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,29 +20,35 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverInstance {
     public static WebDriver driver;
+    public static String targetBrowser;
 
 
     //This will open the browser
     public void openBrowser() {
         ResourceBundle conFig = ResourceBundle.getBundle("conFig");
+        String  browserType = conFig.getString("browser");
+        targetBrowser = System.getProperty("targetBrowser",browserType);
         //Check if parameter passed as 'Chrome'
-        if (conFig.getString("browser").equalsIgnoreCase("Chrome")) {
+        if (targetBrowser.equalsIgnoreCase("Chrome")) {
             //set path to Chrome.exe
-            System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
+            //System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
             //create Chrome instance
             driver = new ChromeDriver();
 
             //Check if parameter passed as 'Firefox'
-        } else if (conFig.getString("browser").equalsIgnoreCase("Firefox")) {
+        } else if (targetBrowser.equalsIgnoreCase("Firefox")) {
             //set path to Firefox.exe
-            System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
+            //System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             //create Firefox instance
             driver = new FirefoxDriver();
         }
         //Check if parameter passed as 'Edge'
-        else if(conFig.getString("browser").equalsIgnoreCase("Edge")){
+        else if(targetBrowser.equalsIgnoreCase("Edge")){
             //set path to Edge.exe
-            System.setProperty("webdriver.edge.driver", "src/Drivers/MicrosoftWebDriver.exe");
+            //System.setProperty("webdriver.edge.driver", "src/Drivers/MicrosoftWebDriver.exe");
+            WebDriverManager.edgedriver().setup();
             //create Edge instance
             driver = new EdgeDriver();
         }

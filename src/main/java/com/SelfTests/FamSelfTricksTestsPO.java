@@ -61,9 +61,12 @@ public class FamSelfTricksTestsPO {
         wait.until(ExpectedConditions.elementToBeClickable(CtaTricksManual));
 
         CtaTricksManual.click();
+        Thread.sleep(3000);
     }
-        public void formPage(){
+        public void formPage()throws Throwable{
+            driver.switchTo().defaultContent();
             driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+            Thread.sleep(3000);
             TricksPage.isDisplayed();
     }
         public void fName(){
