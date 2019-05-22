@@ -72,7 +72,7 @@ public class SelfCaseViewPO {
 
 
     public void caseViewPage(String URLpage){
-        driver.navigate().to(config.getString(URLpage));
+        driver.navigate().to(config.getString("URLpage"));
     }
     public void casePage(){
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
@@ -137,7 +137,7 @@ public class SelfCaseViewPO {
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(2);
 
-        Stage3Text.sendKeys("FS-Case-120234013");
+        Stage3Text.sendKeys("FS-Case-120249628");
     }
     public void inputNumber(){
         Stage3Number.sendKeys("3526");

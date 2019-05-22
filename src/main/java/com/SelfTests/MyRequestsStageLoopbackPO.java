@@ -26,7 +26,7 @@ public class MyRequestsStageLoopbackPO {
 
 
     public void stageLoop(String LoopbackURL){
-        driver.navigate().to(config.getString(LoopbackURL));
+        driver.navigate().to(config.getString("LoopbackURL"));
 
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
     }

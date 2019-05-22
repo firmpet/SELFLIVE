@@ -46,7 +46,7 @@ public class MyRequestDateCheckPO {
 
 
     public void requestDateCheck(String DateURL)   {
-        driver.navigate().to(config.getString(DateURL));
+        driver.navigate().to(config.getString("DateURL"));
     }
     public void inputText() throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
