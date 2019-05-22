@@ -93,7 +93,7 @@ public class SelfCaseViewPO {
     }
     public void refTable(){
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
-    Reference.click();
+    Reference.click() ;
     }
     public void continueBtn(){
         CtaContinue.click();
