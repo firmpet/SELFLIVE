@@ -1,4 +1,4 @@
-@rege
+@reg
 Feature: FAM SELF - Tokens (Copy)
 
 Scenario: Tokens

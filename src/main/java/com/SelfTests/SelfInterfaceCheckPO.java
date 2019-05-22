@@ -71,7 +71,8 @@ public class SelfInterfaceCheckPO {
     public void dashbtn(){
         CtaDashboard.click();
     }
-    public void casesTable(){
+    public void casesTable()throws Throwable{
+        Thread.sleep(2000);
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
     DashboardPage.isDisplayed()  ;
     driver.switchTo().defaultContent();
