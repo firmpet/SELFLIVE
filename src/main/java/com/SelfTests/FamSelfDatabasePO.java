@@ -50,7 +50,8 @@ public class FamSelfDatabasePO {
         wait.until(ExpectedConditions.elementToBeClickable(DropdownField));
         DropdownField.click();
     }
-    public void insertText() {
+    public void insertText() throws Throwable {
+        Thread.sleep(2000);
         InputField.sendKeys("test");
     }
     public void clear(){
