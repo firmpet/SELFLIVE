@@ -1,5 +1,6 @@
 @reg
 Feature: FAM Database Test (Copy)
+  @sanity
 Scenario: Database
   Given I login with valid credentials
   When I click on Cta Database Integration Test
