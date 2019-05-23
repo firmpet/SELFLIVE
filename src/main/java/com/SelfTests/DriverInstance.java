@@ -53,16 +53,18 @@ public class DriverInstance {
             driver = new EdgeDriver();
         }
         //Check if parameter passed as 'IE'
-        else if(conFig.getString("browser").equalsIgnoreCase("IE")){
+        //else if(conFig.getString("browser").equalsIgnoreCase("IE")){
+        else if(targetBrowser.equalsIgnoreCase("IE")){
             //set path to IE.exe
-            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
+            //System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
+            WebDriverManager.iedriver().setup();
             //create IE instance
             driver = new InternetExplorerDriver();
         }
         else{
 
 //            System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
-//            driver = new ChromeDriver();            //Comment to run chrome headless
+////            driver = new ChromeDriver();            //Comment to run chrome headless
 
             System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
             driver = new InternetExplorerDriver();
@@ -105,14 +107,10 @@ public class DriverInstance {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(conFig.getString("URL"));
-        //driver.navigate().to("javascript:document.getElementById('overridelink').click()");
         driver.manage().window().maximize();
 
 
-        //Sign In
-//        driver.findElement(By.id("loginLink")).click();
-//        driver.findElement(By.xpath("/html/body/div/div/div/div/div[4]/a")).click();
-//        driver.findElement(By.linkText("Services")).click();
+
 
     }
 
