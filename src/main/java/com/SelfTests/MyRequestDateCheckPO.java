@@ -41,7 +41,7 @@ public class MyRequestDateCheckPO {
     @FindBy (xpath = "//tr[@href='#']")
     private WebElement SearchBtn;
 
-    @FindBy (xpath = "//*[text()='Application']")
+    @FindBy (xpath = "//tr[@class='case-table']")
     private WebElement ApplicationPage;
 
 
