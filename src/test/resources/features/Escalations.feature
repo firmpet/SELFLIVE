@@ -1,6 +1,7 @@
 @reg
 Feature: Escalations (Stage 1 to Stage 3 (Copy)
 
+  @smoke
   Scenario: Escalation Logs successful submission
     Given I login with valid credentials
     When I click on Cta Escalation Test Process

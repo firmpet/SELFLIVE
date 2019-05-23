@@ -22,7 +22,7 @@ public class Escalations_step extends DriverInstance {
 
     @When("^I click on Cta Escalation Test Process$")
     public void iClickOnCtaEscalationTestProcess() throws Throwable{
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         esca.escalations();
     }
 
@@ -34,7 +34,7 @@ public class Escalations_step extends DriverInstance {
 
     @When("^I entered Testing in the Text field$")
     public void iEnteredReferenceNumberInTheTextField() throws Throwable {
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         esca.enterTest();
     }
 
