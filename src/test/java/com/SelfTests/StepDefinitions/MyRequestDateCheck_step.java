@@ -3,6 +3,7 @@ package com.SelfTests.StepDefinitions;
 import com.SelfTests.DriverInstance;
 import com.SelfTests.MyRequestDateCheckPO;
 import com.SelfTests.TestAssert;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,68 +18,65 @@ public class MyRequestDateCheck_step extends DriverInstance {
     private MyRequestDateCheckPO dateCheck = new MyRequestDateCheckPO(driver);
 
 
-    @And("^I navigate to request date check \"([^\"]*)\"$")
+    @And("^I navigate to request Date check \"([^\"]*)\"$")
     public void iNavigateToRequestDateCheck(String DateURL) throws Throwable {
         Thread.sleep(3000);
         dateCheck.requestDateCheck(DateURL);
     }
+
     @When("^I enter text field$")
     public void iEnterTextField() throws Throwable{
+        Thread.sleep(2000);
         dateCheck.inputText();
     }
 
     @And("^I clicked Cta Submit$")
-    public void iClickedCtaSubmit() {
-        dateCheck.submitBtn();
+    public void iClickedCtaSubmit()   {
+        dateCheck.submitBtnn();
     }
 
     @Then("^Reference and submission successful message is displayed$")
-    public void referenceAndSubmissionSuccessfulMessageIsDisplayed() {
+    public void referenceAndSubmissionSuccessfulMessageIsDisplayed() throws Throwable {
+        Thread.sleep(2000);
         String text = driver.findElement(By.xpath("//*[text()='Thank you for submitting Myrequests date check']")).getText();
         assertTrue(text.contains("Thank you for submitting Myrequests date check"));
     }
 
     @When("^I click Cta Continue$")
-    public void iClickCtaContinue() {
-        dateCheck.continueBtn();
+    public void iClickCtaContinue()  {
+        dateCheck.continueBtnn();
     }
 
     @Then("^Survey page is displayed$")
-    public void surveyPageIsDisplayed() {
+    public void surveyPageIsDisplayed() throws Throwable{
+        Thread.sleep(2000);
         String text = driver.findElement(By.xpath("//*[text()='How would you rate your experience today?']")).getText();
         assertTrue(text.contains("How would you rate your experience today?"));
     }
 
     @When("^I click top nav MyRequests VThree$")
-    public void iClickTopNavMyRequestsVThree() throws Throwable{
-        dateCheck.myRequestLnk();
-        Thread.sleep(4000);
-    }
-
-    @And("^my My Request page is displayed$")
-    public void myMyRequestPageIsDisplayed() {
-        Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[@id='MyRequestTable']/tbody/tr[1]/td[1]"));
-    }
-
-    @And("^I enter into searchField$")
-    public void iEnterIntoSearchField() throws Throwable {
-        Thread.sleep(2000);
-        dateCheck.textRef();
+    public void iClickTopNavMyRequestsVThree() throws Throwable {
+        dateCheck.myRequestV3Link();
         Thread.sleep(2000);
     }
 
-    @And("^I clicked search$")
-    public void iClickedSearch(){
-        dateCheck.search();
+    @And("^Request data page is displayed$")
+    public void requestDataPageIsDisplayed() throws Throwable{
+        //Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//table[@id='MyRequestTable']"));
+        dateCheck.requestTable();
+        Thread.sleep(2000);
     }
 
-    @Then("^the result is displayed$")
-    public void theResultIsDisplayed() {
-        String text = driver.findElement(By.xpath("//*[text()='Myrequests date check']")).getText();
-        assertTrue(text.contains("Myrequests date check"));
-
+    @And("^I clicked Case number column$")
+    public void iClickedCaseNumberColumn() throws Throwable {
+        Thread.sleep(2000);
+        dateCheck.numberColumn();
     }
 
-
+    @Then("^The result is displayed$")
+    public void theResultIsDisplayed() throws Throwable{
+        Thread.sleep(1000);
+        dateCheck.requestDataPage();
+    }
 
 }

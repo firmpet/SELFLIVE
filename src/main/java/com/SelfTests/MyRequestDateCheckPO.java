@@ -26,7 +26,7 @@ public class MyRequestDateCheckPO {
     @FindBy (id = "text1")
     private WebElement TextField;
 
-    @FindBy (xpath = "//*[text()='Submit']")
+    @FindBy (xpath = "//span[@class='submitText']")
     private WebElement CtaSubmit;
 
     @FindBy (xpath = "//*[text()='Continue']")
@@ -35,11 +35,14 @@ public class MyRequestDateCheckPO {
     @FindBy(linkText = "MyRequests V3")
     private WebElement CtaMyRequests;
 
-    @FindBy (xpath = "//*[@id='search-input']")
-    private WebElement SearchField;
+    @FindBy (xpath = "//table[@id='MyRequestTable']")
+    private WebElement RequestTableData;
 
-    @FindBy (id = "search-submit")
+    @FindBy (xpath = "//tr[@href='#']")
     private WebElement SearchBtn;
+
+    @FindBy (xpath = "//*[text()='Application']")
+    private WebElement ApplicationPage;
 
 
 
@@ -50,27 +53,28 @@ public class MyRequestDateCheckPO {
     }
     public void inputText() throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(2000);
         TextField.sendKeys("Testing");
     }
-    public void submitBtn()  {
+    public void submitBtnn()  {
         CtaSubmit.click();
     }
-    public void continueBtn()  {
+    public void continueBtnn ()  {
         CtaContinue.click();
     }
-    public void myRequestLnk(){
+    public void myRequestV3Link ()  {
         CtaMyRequests.click();
-
-        driver.switchTo().defaultContent();
     }
-    public void textRef()throws Throwable{
-        Thread.sleep(2000);
+    public void requestTable()  {
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
-        Thread.sleep(2000);
-        SearchField.sendKeys("FS-Case-117107182");
+        RequestTableData.isDisplayed();
     }
-    public void search()  {
+    public void numberColumn()  {
         SearchBtn.click();
     }
+    public void requestDataPage()  {
+        ApplicationPage.isDisplayed();
+    }
+
+
+
 }
