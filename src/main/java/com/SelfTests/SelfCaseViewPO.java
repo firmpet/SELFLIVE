@@ -71,7 +71,8 @@ public class SelfCaseViewPO {
 
 
 
-    public void caseViewPage(String URLpage){
+    public void caseViewPage(String URLpage) throws Throwable{
+        Thread.sleep(2000);
         driver.navigate().to(config.getString("URLpage"));
     }
     public void casePage(){
@@ -134,7 +135,7 @@ public class SelfCaseViewPO {
     }
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);

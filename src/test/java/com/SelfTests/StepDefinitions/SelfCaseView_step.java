@@ -16,24 +16,11 @@ import javax.xml.xpath.XPath;
 public class SelfCaseView_step extends DriverInstance {
     private SelfCaseViewPO selfCase = new SelfCaseViewPO(driver);
     private TestAssert testAssert;
-    public static String caseNumber;
 
     @When("^I navigate to Case View \"([^\"]*)\"$")
     public void iNavigateToCaseView(String URLpage) throws Throwable {
-        Thread.sleep(3000);
         selfCase.caseViewPage(URLpage);
     }
-//    @When("^I navigate to Case View page$")
-//    public void iNavigateToCaseViewPage() throws Throwable {
-//        //Thread.sleep(5000);
-//        driver.navigate().to("https://releasetesting-self.achieveservice.com/service/Case_View_Test");
-//
-//    }
-//    @When("^I navigate to Case View page$")
-//    public void iNavigateToCaseViewPage() throws Throwable {
-//        Thread.sleep(5000);
-//        selfCase.caseViewPage();
-//       }
 
     @Then("^Case View should displayed$")
     public void caseViewShouldDisplayed() {
