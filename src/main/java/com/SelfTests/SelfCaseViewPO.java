@@ -82,8 +82,9 @@ public class SelfCaseViewPO {
     public void caseName() {
         TextField.sendKeys("Lambeth");
     }
-    public void numbers()   {
+    public void numbers()  throws Throwable{
         NumberField.sendKeys("4234");
+        Thread.sleep(2000);
     }
     public void submitOutcome(){
         RefPage.isDisplayed();
@@ -114,10 +115,10 @@ public class SelfCaseViewPO {
         Stage2NameField.sendKeys("Testing");
     }
 
-    public void numberField(){
+    public void numberField() throws Throwable{
         Stage2NumberField.sendKeys("9870");
+        Thread.sleep(2000);
     }
-
 
     public void searchField()throws Throwable {
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));

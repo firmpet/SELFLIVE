@@ -34,13 +34,12 @@ public class SelfCaseView_step extends DriverInstance {
 
         //Upload File from C drive
         driver.findElement(By.className("resumable-browse-file")).sendKeys("C:\\Users\\Joshua Ayoade\\Pictures\\IP ss.PNG");
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         //driver.findElement(By.className("upload-button")).click();
     }
 
     @Then("^Submission with reference page is displayed$")
-    public void submissionWithReferencePageIsDisplayed() throws Throwable {
-        Thread.sleep(2000);
+    public void submissionWithReferencePageIsDisplayed(){
         selfCase.submitOutcome();
     }
 
@@ -60,20 +59,18 @@ public class SelfCaseView_step extends DriverInstance {
     }
 
     @Then("^Case view page is displayed$")
-    public void caseViewPageIsDisplayed() throws Throwable {
-        Thread.sleep(1000);
+    public void caseViewPageIsDisplayed() {
         selfCase.caseView();
     }
 
     @When("^I enter new credentials in the fields$")
     public void iEnterNewCredentialsInTheFields() throws Throwable {
-        Thread.sleep(2000);
         selfCase.textField();
         selfCase.numberField();
 
         //Upload File from C drive
         driver.findElement(By.className("resumable-browse-file")).sendKeys("C:\\Users\\Joshua Ayoade\\Pictures\\IP ss.PNG");
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
     }
 
     @Then("^Submission reference page is displayed$")
