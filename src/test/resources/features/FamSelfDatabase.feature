@@ -1,4 +1,4 @@
-@rege
+@reg
 Feature: FAM SELF - Database (Copy)
 
 Scenario: Database Copy
