@@ -82,7 +82,6 @@ public class SelfCaseView_step extends DriverInstance {
     public void iEnterNewCredentialsInTheFields() throws Throwable {
         Thread.sleep(2000);
         selfCase.textField();
-        Thread.sleep(2000);
         selfCase.numberField();
 
         //Upload File from C drive
@@ -97,7 +96,6 @@ public class SelfCaseView_step extends DriverInstance {
 
     @When("^I click Cta Dashboard$")
     public void iClickCtaDashboard() throws Throwable{
-        //selfCase.refPage();
         driver.navigate().to("https://releasetesting-self.achieveservice.com/CommonDashboard");
 
         Thread.sleep(2000);
@@ -106,9 +104,7 @@ public class SelfCaseView_step extends DriverInstance {
     @And("^Searched for case reference$")
     public void searchedForCaseReference() throws Throwable{
         selfCase.searchField();
-        Thread.sleep(1000);
         selfCase.nextStage();
-        Thread.sleep(1000);
     }
 
     @Then("^I clicks Cta Continue$")
@@ -122,14 +118,11 @@ public class SelfCaseView_step extends DriverInstance {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,5000)", "");
 
-        Thread.sleep(1000);
         selfCase.inputText();
-        Thread.sleep(1000);
         selfCase.inputNumber();
 
         //Upload File from C drive
         driver.findElement(By.className("resumable-browse-file")).sendKeys("C:\\Users\\Joshua Ayoade\\Pictures\\IP ss.PNG");
-        //Thread.sleep(1000);
     }
 
     @Then("^results page is displayed with stages number$")

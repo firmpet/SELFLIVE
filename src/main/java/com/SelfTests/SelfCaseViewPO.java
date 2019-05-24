@@ -53,9 +53,6 @@ public class SelfCaseViewPO {
     @FindBy (id = "number11")
     private WebElement Stage2NumberField;
 
-//    @FindBy (xpath = "//*[@id=\"current-tasks\"]/div/div[1]/h4")
-//    private WebElement Stage2Confirmation;
-
     @FindBy (xpath = "//*[@id='AllProcesses']/div[1]/div[1]/select[3]")
     private WebElement SearchRef;
 
@@ -120,27 +117,24 @@ public class SelfCaseViewPO {
         Stage2NumberField.sendKeys("9870");
     }
 
-//    public void refPage(){
-//        Stage2Confirmation.isDisplayed();
-//    }
 
     public void searchField()throws Throwable {
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         SearchRef.click();
     }
     public void nextStage () throws Throwable{
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         Stage3.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
     public void continues() throws Throwable{
         ContinueCta.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);
