@@ -1,4 +1,4 @@
-@reg
+@rege
   Feature: My Requests
 
     Scenario: Stage Loopback
