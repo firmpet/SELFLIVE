@@ -54,10 +54,12 @@ public class FamSelfDatabasePO {
         Thread.sleep(2000);
         InputField.sendKeys("test");
     }
-    public void clear(){
+    public void clear()throws Throwable{
+        Thread.sleep(1000);
         Field.clear();
     }
-    public void insertEmail(){
+    public void insertEmail()throws Throwable{
+        Thread.sleep(1000);
         Email.sendKeys("support@example.com");
     }
     public void lName(){
