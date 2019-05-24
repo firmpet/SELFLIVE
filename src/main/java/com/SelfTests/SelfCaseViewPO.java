@@ -126,21 +126,21 @@ public class SelfCaseViewPO {
 
     public void searchField()throws Throwable {
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         SearchRef.click();
     }
     public void nextStage () throws Throwable{
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         Stage3.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
     public void continues() throws Throwable{
         ContinueCta.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(4000);
+        Thread.sleep(1000);
 
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);

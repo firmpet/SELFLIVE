@@ -100,15 +100,15 @@ public class SelfCaseView_step extends DriverInstance {
         //selfCase.refPage();
         driver.navigate().to("https://releasetesting-self.achieveservice.com/CommonDashboard");
 
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     @And("^Searched for case reference$")
     public void searchedForCaseReference() throws Throwable{
         selfCase.searchField();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         selfCase.nextStage();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @Then("^I clicks Cta Continue$")
@@ -118,13 +118,13 @@ public class SelfCaseView_step extends DriverInstance {
 
     @When("^I entered credentials in the fields$")
     public void iEnteredCredentialsInTheFields() throws Throwable {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,5000)", "");
 
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         selfCase.inputText();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         selfCase.inputNumber();
 
         //Upload File from C drive
