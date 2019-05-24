@@ -9,12 +9,14 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 import javax.xml.xpath.XPath;
 
 public class SelfCaseView_step extends DriverInstance {
     private SelfCaseViewPO selfCase = new SelfCaseViewPO(driver);
     private TestAssert testAssert;
+    public static String caseNumber;
 
     @When("^I navigate to Case View \"([^\"]*)\"$")
     public void iNavigateToCaseView(String URLpage) throws Throwable {
@@ -52,7 +54,7 @@ public class SelfCaseView_step extends DriverInstance {
     @Then("^Submission with reference page is displayed$")
     public void submissionWithReferencePageIsDisplayed() throws Throwable {
         Thread.sleep(2000);
-        selfCase.submitOutcoume();
+        selfCase.submitOutcome();
     }
 
     @When("^I click Cta MyRequests VThree$")
@@ -61,7 +63,7 @@ public class SelfCaseView_step extends DriverInstance {
     }
 
     @And("^Searched for reference$")
-    public void searchedForReference() {
+    public void searchedForReference() throws Throwable{
         selfCase.refTable();
     }
 
@@ -98,17 +100,19 @@ public class SelfCaseView_step extends DriverInstance {
         //selfCase.refPage();
         driver.navigate().to("https://releasetesting-self.achieveservice.com/CommonDashboard");
 
-        Thread.sleep(6000);
+        Thread.sleep(4000);
     }
 
     @And("^Searched for case reference$")
     public void searchedForCaseReference() throws Throwable{
         selfCase.searchField();
         Thread.sleep(3000);
+        selfCase.nextStage();
+        Thread.sleep(3000);
     }
 
     @Then("^I clicks Cta Continue$")
-    public void iClicksCtaContinue() {
+    public void iClicksCtaContinue() throws Throwable{
         selfCase.continues();
     }
 

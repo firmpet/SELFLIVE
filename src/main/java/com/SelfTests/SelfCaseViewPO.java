@@ -56,10 +56,13 @@ public class SelfCaseViewPO {
 //    @FindBy (xpath = "//*[@id=\"current-tasks\"]/div/div[1]/h4")
 //    private WebElement Stage2Confirmation;
 
-    @FindBy (xpath = "//*[@id='AllProcesses']/div[1]/div[2]/div/input")
+    @FindBy (xpath = "//*[@id='AllProcesses']/div[1]/div[1]/select[3]")
     private WebElement SearchRef;
 
-    @FindBy(xpath = "//*[@id='AllProcesses']/table/tbody/tr[2]/td[11]/button[2]")
+    @FindBy (xpath = "//option[@value='Stage 3']")
+    private WebElement Stage3;
+
+    @FindBy(xpath = "//*[@id='AllProcesses']/table/tbody/tr[1]/td[11]/button[2]")
     private WebElement ContinueCta;
 
     @FindBy (id = "text12")
@@ -84,7 +87,7 @@ public class SelfCaseViewPO {
     public void numbers()   {
         NumberField.sendKeys("4234");
     }
-    public void submitOutcoume(){
+    public void submitOutcome(){
         RefPage.isDisplayed();
     }
     public void requestV3Link(){
@@ -121,13 +124,19 @@ public class SelfCaseViewPO {
 //        Stage2Confirmation.isDisplayed();
 //    }
 
-    public void searchField()throws Throwable{
+    public void searchField()throws Throwable {
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        SearchRef.sendKeys("FS-Case-118015963");
+        Thread.sleep(3000);
+        SearchRef.click();
+    }
+    public void nextStage () throws Throwable{
+        Thread.sleep(3000);
+        Stage3.click();
         Thread.sleep(3000);
     }
-    public void continues(){
+    public void continues() throws Throwable{
         ContinueCta.click();
+        Thread.sleep(3000);
     }
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
@@ -136,8 +145,8 @@ public class SelfCaseViewPO {
 //        int size = driver.findElements(By.tagName("iframe")).size();
 //        System.out.println("Total Frames --" + size);
         driver.switchTo().frame(2);
+        Stage3Text.sendKeys("Testing");
 
-        Stage3Text.sendKeys("FS-Case-120249628");
     }
     public void inputNumber(){
         Stage3Number.sendKeys("3526");
