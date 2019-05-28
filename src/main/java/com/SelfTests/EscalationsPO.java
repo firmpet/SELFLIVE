@@ -90,6 +90,7 @@ public class EscalationsPO {
     }
     public void myRequestsV3Link() throws Throwable{
         driver.switchTo().defaultContent();
+        Thread.sleep(1000);
     CtaMyRequestsV3.click();
     }
     public void searchField() throws Throwable{
