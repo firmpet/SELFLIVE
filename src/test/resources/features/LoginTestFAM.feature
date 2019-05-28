@@ -1,4 +1,4 @@
-@rege
+@reg
 Feature: Login Test FAM (Copy)
 Scenario: Login
   Given I login with valid credentials
