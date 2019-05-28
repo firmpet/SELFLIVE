@@ -22,7 +22,6 @@ public class Escalations_step extends DriverInstance {
 
     @When("^I click on Cta Escalation Test Process$")
     public void iClickOnCtaEscalationTestProcess() throws Throwable{
-        //Thread.sleep(2000);
         esca.escalations();
     }
 
@@ -34,7 +33,6 @@ public class Escalations_step extends DriverInstance {
 
     @When("^I entered Testing in the Text field$")
     public void iEnteredReferenceNumberInTheTextField() throws Throwable {
-        //Thread.sleep(3000);
         esca.enterTest();
     }
 
@@ -44,23 +42,25 @@ public class Escalations_step extends DriverInstance {
     }
 
     @Then("^Submission successful page is displayed$")
-    public void submissionSuccessfulPageIsDisplayed() {
+    public void submissionSuccessfulPageIsDisplayed() throws Throwable{
         esca.submissionPage();
     }
 
     @When("^I click on Cta MyRequests VThree$")
-    public void iClickOnCtaMyRequestsVThree() {
+    public void iClickOnCtaMyRequestsVThree() throws Throwable {
         esca.myRequestsV3Link();
     }
 
     @Then("^My Request page is displayed with Data logs$")
-    public void myRequestPageIsDisplayedWithDataLogs() {
+    public void myRequestPageIsDisplayedWithDataLogs() throws Throwable{
+        Thread.sleep(1000);
         Assert.assertFalse(testAssert.validateElementExistById(driver, "My Requests"));
+        Thread.sleep(1000);
         Assert.assertFalse(testAssert.validateElementExistById(driver, "MyRequestTable"));
     }
 
     @And("^I enter Case ID in the Search field$")
-    public void iEnterCaseIDInTheSearchField() {
+    public void iEnterCaseIDInTheSearchField() throws Throwable {
         esca.searchField();
     }
 
@@ -70,7 +70,7 @@ public class Escalations_step extends DriverInstance {
     }
 
     @Then("^The case log info is display with stages indicated$")
-    public void theCaseLogInfoIsDisplayWithStagesIndicated() {
+    public void theCaseLogInfoIsDisplayWithStagesIndicated() throws Throwable {
         esca.caseLogsPage();
     }
 

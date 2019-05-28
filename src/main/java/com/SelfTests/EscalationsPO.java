@@ -63,7 +63,7 @@ public class EscalationsPO {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(ctaEscalation));
         ctaEscalation.click();
-//        driver.switchTo().defaultContent();
+
 
 //        WebDriverWait wait = new WebDriverWait(driver, 30);
 //        wait.until(ExpectedConditions.elementToBeClickable(By.id("self-content")));
@@ -80,36 +80,34 @@ public class EscalationsPO {
 //        ctaEscalation.click();
     }
 
-
-    //public void escalationFormPage(){                   EscalationForm.isDisplayed();   }
-
-    public void enterTest(){
+    public void enterTest()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
+        Thread.sleep(1000);
         testField.sendKeys("Testing");
     }
     public void submitBtn(){
         CtaSubmit.click();
     }
-    public void submissionPage(){
+    public void submissionPage() throws Throwable{
+        Thread.sleep(1000);
         SubmitSuccessfully.isDisplayed();
     }
-    public void myRequestsV3Link(){
+    public void myRequestsV3Link() throws Throwable{
         driver.switchTo().defaultContent();
+        Thread.sleep(1000);
     CtaMyRequestsV3.click();
     }
-    //public void myRequestFormPage(){          MyRequestPage.isDisplayed();        }
-
-    //public void myRequestFormTable(){         MyRequestTable.isDisplayed();         }
-
-    public void searchField(){
+    public void searchField() throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
+        Thread.sleep(1000);
         Search.sendKeys("FS-Case-112975008");
     }
     public void searchBtn(){
         CtaSearch.click();
     }
-    public void caseLogsPage(){
+    public void caseLogsPage()throws Throwable{
         CaseLogs.isDisplayed();
+        Thread.sleep(1000);
     }
 
 
