@@ -27,8 +27,8 @@ public class Escalations_step extends DriverInstance {
 
     @Then("^Escalation Form One is displayed$")
     public void escalationFormOneIsDisplayed() throws Throwable {
-        Thread.sleep(2000);
         Assert.assertFalse(testAssert.validateElementExistByXpath(driver, "//*[text()='Escalation Form One']"));
+        //Thread.sleep(1000);
     }
 
     @When("^I entered Testing in the Text field$")
@@ -55,7 +55,7 @@ public class Escalations_step extends DriverInstance {
     public void myRequestPageIsDisplayedWithDataLogs() throws Throwable{
         Thread.sleep(1000);
         Assert.assertFalse(testAssert.validateElementExistById(driver, "My Requests"));
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         Assert.assertFalse(testAssert.validateElementExistById(driver, "MyRequestTable"));
     }
 
@@ -64,10 +64,10 @@ public class Escalations_step extends DriverInstance {
         esca.searchField();
     }
 
-    @And("^I click search$")
-    public void iClickSearch() {
-        esca.searchBtn();
-    }
+//    @And("^I click search$")
+//    public void iClickSearch() {
+//        esca.searchBtn();
+//    }
 
     @Then("^The case log info is display with stages indicated$")
     public void theCaseLogInfoIsDisplayWithStagesIndicated() throws Throwable {

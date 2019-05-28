@@ -46,22 +46,19 @@ public class EscalationsPO {
     @FindBy (id = "MyRequestTable")
     private WebElement MyRequestTable;
 
-    @FindBy (id = "search-input")
+    @FindBy (xpath= "//td[@class='open-task']")
     private WebElement Search;
 
-    @FindBy (id = "search-submit")
-    private WebElement CtaSearch;
-
-    @FindBy (xpath = "//*[@id='hello-title']")
+    @FindBy (xpath = "//h3[text()='Stage 1']")
     private WebElement CaseLogs;
 
 
 
     public void escalations() throws InterruptedException {
-        Thread.sleep(2000);
         driver.switchTo().frame(driver.findElement(By.id("MyServices")));
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(ctaEscalation));
+        //Thread.sleep(1000);
+//        WebDriverWait wait = new WebDriverWait(driver, 20);
+//        wait.until(ExpectedConditions.elementToBeClickable(ctaEscalation));
         ctaEscalation.click();
 
 
@@ -82,7 +79,6 @@ public class EscalationsPO {
 
     public void enterTest()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
-        Thread.sleep(1000);
         testField.sendKeys("Testing");
     }
     public void submitBtn(){
@@ -94,20 +90,14 @@ public class EscalationsPO {
     }
     public void myRequestsV3Link() throws Throwable{
         driver.switchTo().defaultContent();
-        Thread.sleep(1000);
     CtaMyRequestsV3.click();
     }
     public void searchField() throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("MyRequestsV3")));
-        Thread.sleep(1000);
-        Search.sendKeys("FS-Case-112975008");
-    }
-    public void searchBtn(){
-        CtaSearch.click();
+        Search.click();
     }
     public void caseLogsPage()throws Throwable{
         CaseLogs.isDisplayed();
-        Thread.sleep(1000);
     }
 
 

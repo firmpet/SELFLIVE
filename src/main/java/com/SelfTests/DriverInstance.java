@@ -105,7 +105,7 @@ public class DriverInstance {
 
 
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(conFig.getString("URL"));
         driver.manage().window().maximize();
 

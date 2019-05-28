@@ -11,5 +11,4 @@ Feature: Escalations (Stage 1 to Stage 3 (Copy)
     When I click on Cta MyRequests VThree
     Then My Request page is displayed with Data logs
     And I enter Case ID in the Search field
-    And I click search
     Then The case log info is display with stages indicated
