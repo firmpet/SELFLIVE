@@ -69,31 +69,31 @@ public class FamSelfTricksTestsPO {
             Thread.sleep(3000);
             TricksPage.isDisplayed();
     }
-        public void fName(){
+        public void fName()  {
         Firstname.sendKeys("David");
     }
-        public void lName(){
+        public void lName()  {
         Lastname.sendKeys("Daniel");
     }
         public void dropdownField(){
         SelectField.click();
     }
-        public void texts(){
+        public void texts()  {
         InsertText.sendKeys("Yes");
     }
-        public void digit(){
+        public void digit()  {
         NumberField.sendKeys("2");
     }
-        public void digits(){
+        public void digits()  {
         NumbersField.sendKeys("3");
     }
-        public void dob(){
+        public void dob()  {
         DOBField.sendKeys("20112018");
     }
-        public void postal(){
+        public void postal()  {
         PostCode.sendKeys("EC2A 2DT");
     }
-        public void verifier(){
+        public void verifier()  {
         ValidateField.sendKeys("Validity");
     }
 

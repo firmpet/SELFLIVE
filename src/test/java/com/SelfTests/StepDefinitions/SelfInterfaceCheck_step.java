@@ -46,7 +46,7 @@ public class SelfInterfaceCheck_step extends DriverInstance {
     }
 
     @Then("^MyRequests V page is displayed$")
-    public void myrequestsVPageIsDisplayed() {
+    public void myrequestsVPageIsDisplayed() throws Throwable{
         inter.casesLog();
     }
 

@@ -27,14 +27,27 @@ public class DriverInstance {
     public void openBrowser() {
         ResourceBundle conFig = ResourceBundle.getBundle("conFig");
         String  browserType = conFig.getString("browser");
+        String headless = conFig.getString("headless");
+
         targetBrowser = System.getProperty("targetBrowser",browserType);
+
+
+
         //Check if parameter passed as 'Chrome'
         if (targetBrowser.equalsIgnoreCase("Chrome")) {
             //set path to Chrome.exe
             //System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
             WebDriverManager.chromedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+
+            if(headless.equalsIgnoreCase("true")){
+
+                chromeOptions.addArguments
+                        ("--headless","--disable-gpu","window-size=1920,1200");
+            }
+
             //create Chrome instance
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);
 
             //Check if parameter passed as 'Firefox'
         } else if (targetBrowser.equalsIgnoreCase("Firefox")) {
@@ -66,8 +79,8 @@ public class DriverInstance {
 //            System.setProperty("webdriver.chrome.driver", "src/Drivers/chromedriver.exe");
 ////            driver = new ChromeDriver();            //Comment to run chrome headless
 
-            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
-            driver = new InternetExplorerDriver();
+//            System.setProperty("webdriver.ie.driver", "src/Drivers/IEDriverServer.exe");
+//            driver = new InternetExplorerDriver();
 
 //            System.setProperty("webdriver.gecko.driver", "src/Drivers/geckodriver.exe");
 //            driver = new FirefoxDriver();

@@ -80,7 +80,8 @@ public class SelfInterfaceCheckPO {
     public void requestLink() {
         CtaMyRequest.click();
     }
-    public void casesLog()  {
+    public void casesLog() throws Throwable {
+        Thread.sleep(1000);
         RequestCases.isDisplayed();
     }
     public void connectNav()  {

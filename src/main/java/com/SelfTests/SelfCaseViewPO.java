@@ -122,7 +122,7 @@ public class SelfCaseViewPO {
 
     public void searchField()throws Throwable {
         driver.switchTo().frame(driver.findElement(By.id("CommonDashboard")));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         SearchRef.click();
     }
     public void nextStage () throws Throwable{
@@ -132,7 +132,7 @@ public class SelfCaseViewPO {
     }
     public void continues() throws Throwable{
         ContinueCta.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void inputText()throws Throwable{
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
