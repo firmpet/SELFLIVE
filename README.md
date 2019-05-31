@@ -34,8 +34,8 @@
 
 ##Execute using MAVEN Command Line Options:
 
-mvn clean test -Dtest.run.mode=windowed -Dcucumber.options="classpath:features/CRUDOperation.feature"        (runs selected Feature in windowed)
-mvn clean test -Dtest.run.mode=windowed -Dcucumber.options="classpath:features/CRUDOperation.feature:36"     (runs selected Scenario in windowed)
+mvn test    -Dcucumber.options="--tags @smoke" -DtargetBrowser="Edge"          (runs selected Feature and Windowed Browser)
+mvn install -Dcucumber.options="--tags @reg" -DtargetBrowser="Chrome"     (runs via Jenkins)
 
 ##Pages: Page Object : Keep it simple
 
