@@ -32,7 +32,6 @@ public class DriverInstance {
         targetBrowser = System.getProperty("targetBrowser",browserType);
 
 
-
         //Check if parameter passed as 'Chrome'
         if (targetBrowser.equalsIgnoreCase("Chrome")) {
             //set path to Chrome.exe
