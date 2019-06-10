@@ -35,16 +35,16 @@ public class MapZoomControlsPO {
     public void mapZoomPage(String MapZoom) throws Throwable{
         Thread.sleep(1000);
         driver.navigate().to(config.getString("MapZoom"));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
     public void enlarge () throws Throwable{
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.switchTo().frame(driver.findElement(By.id("fillform-frame-1")));
 
         ZoomIn.click();
     }
     public void reduced () throws Throwable {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         ZoomOut.click();
     }
 

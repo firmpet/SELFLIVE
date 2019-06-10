@@ -91,14 +91,17 @@ public class DriverInstance {
         }
 
 
-//        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-//
-//        // Settings to Accept the SSL Certificate in the Capability object
-//        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-//
-//        InternetExplorerDriver driver = new InternetExplorerDriver(capabilities);
+        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+        capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
+        capabilities.setCapability(InternetExplorerDriver.
+                INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+        InternetExplorerOptions options = new InternetExplorerOptions();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+
+
+        //DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
         ChromeOptions opts = new ChromeOptions();
         opts.addArguments("start-maximized");
