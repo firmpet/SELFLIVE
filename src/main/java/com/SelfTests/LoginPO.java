@@ -65,7 +65,7 @@ public class LoginPO {
 //        wait.until(ExpectedConditions.elementToBeClickable(Username));
 //        Username.sendKeys("joshuaayoade@firmstep.com");
 //        wait.until(ExpectedConditions.elementToBeClickable(Password));
-//        Password.sendKeys("bishoP80/");
+//        Password.sendKeys("bishoP80@");
 //        wait.until(ExpectedConditions.elementToBeClickable(SignInBtn));
 //        SignInBtn.click();
 //        wait.until(ExpectedConditions.elementToBeClickable(servicesButton));
