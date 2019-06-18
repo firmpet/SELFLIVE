@@ -57,10 +57,10 @@ public class FAMDatabaseTestPO {
     @FindBy(id = "emailadd")
     private WebElement EnterEmail;
 
-    @FindBy (css = "#AF-Form-2193724e-7b47-44d7-bf73-03c8b98b7033 > div > div > button.btn.btn-af.submitbutton.pull-right")
+    @FindBy (xpath = "//*[text()='Submit']")
     private WebElement Submit;
 
-    @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
+    @FindBy (xpath = "//*[text()='Thank you for submitting Database Integration Stage One Form']")
     private WebElement SubmissionPage;
 
 

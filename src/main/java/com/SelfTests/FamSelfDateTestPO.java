@@ -35,10 +35,10 @@ public class FamSelfDateTestPO {
     @FindBy (id = "time1")
     private WebElement Time;
 
-    @FindBy (xpath = "//*[@id=\"AF-Form-8f081991-face-4e9b-9b24-f3cbe02f7bdb\"]/div/div/button[2]")
+    @FindBy (xpath = "//*[@id='AF-Form-8f081991-face-4e9b-9b24-f3cbe02f7bdb']/div/div/button[2]")
     private WebElement SubmitForm;
 
-    @FindBy (xpath = "//*[@id=\"page\"]/section/section/div/div[1]/p[2]")
+    @FindBy (xpath = "//*[@id=page']/section/section/div/div[1]/p[2]")
     private WebElement SubmissionPage;
 
 
