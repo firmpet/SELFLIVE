@@ -66,8 +66,10 @@ public class FamSelfDateTestPO {
     public void submitBtn(){
         SubmitForm.click();
     }
-    public void submit(){
+    public void submit()throws Throwable{
+        Thread.sleep(2000);
         SubmissionPage.isDisplayed();
+        Thread.sleep(1000);
     }
 
 }

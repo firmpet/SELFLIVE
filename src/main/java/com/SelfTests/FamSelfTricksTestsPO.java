@@ -93,8 +93,10 @@ public class FamSelfTricksTestsPO {
         public void postal()  {
         PostCode.sendKeys("EC2A 2DT");
     }
-        public void verifier()  {
+        public void verifier()  throws Throwable{
+            Thread.sleep(2000);
         ValidateField.sendKeys("Validity");
+            Thread.sleep(1000);
     }
 
 }
